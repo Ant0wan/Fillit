@@ -6,8 +6,11 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 15:21:47 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/28 15:21:50 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/11/28 15:58:10 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// is sample and pieces valid ?
+//count nb of pieces
 
+#include "fillit.h"
