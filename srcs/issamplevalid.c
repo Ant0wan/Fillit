@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 15:21:47 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/29 14:52:03 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/11/29 15:04:29 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,23 @@ static int		format_test(int fd)
 {
 	int		ret;
 	int		i;
+	int		hash_nb;
 	char	buffer[BUFF_SIZE];
 
 	i = 0;
+	hash_nb = 0;
 	while ((ret = (int)read(fd, buffer, BUFF_SIZE)) > 0 && i < 21)
 	{
+		if (*buffer == '#')
+			hash_nb++;
+		if (hash_nb > 4)
+			return (-1);
 		if ((i == 20 || (i + 1) % 5 == 0) && *buffer != '\n')
 			return (-1);
 		else if (i != 20 && ((i + 1) % 5 != 0 && !(*buffer == '#'
 						|| *buffer == '.')))
 			return (-1);
+		hash_nb = (i + 1) % 21 ? hash_nb : 0; 
 		i = (i + 1) % 21; 
 	}
 	return (1);
@@ -40,17 +47,21 @@ static int		format_test(int fd)
 
 static int		tetriminos_validity(int fd)
 {
-	int				ret;
+	int				u;
 	int				i;
 	unsigned short	tetriminos;
 	char			buffer[BUFF_SIZE];
 
 	i = 0;
+	u = 0;
 	(void)tetriminos;
-	while ((ret = (int)read(fd, buffer, BUFF_SIZE)) > 0 && i < 21)
+	while (read(fd, buffer, BUFF_SIZE) > 0 && i < 21)
 	{
 		if (*buffer == '.' )
-			write(1, "0", 1);
+		{
+			write(1, "0", 1i);
+			u++;
+		}
 		else if (*buffer == '#')
 			write(1, "1", 1);
 		i++;
