@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 15:21:47 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/29 14:36:59 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/11/29 14:52:03 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,27 @@ static int		format_test(int fd)
 	return (1);
 }
 
+static int		tetriminos_validity(int fd)
+{
+	int				ret;
+	int				i;
+	unsigned short	tetriminos;
+	char			buffer[BUFF_SIZE];
+
+	i = 0;
+	(void)tetriminos;
+	while ((ret = (int)read(fd, buffer, BUFF_SIZE)) > 0 && i < 21)
+	{
+		if (*buffer == '.' )
+			write(1, "0", 1);
+		else if (*buffer == '#')
+			write(1, "1", 1);
+		i++;
+	}	
+
+	return (1);
+}
+
 int		wrap_test(char *file_path)
 {
 	int	fd;
@@ -50,7 +71,11 @@ int		wrap_test(char *file_path)
 		return (-1);
 	if (check == -1)
 		return (-1);
-
+	if ((fd = open(file_path, O_RDONLY)) < 0)
+		return (-1);
+	check = tetriminos_validity(fd);
+	if ((close(fd)) < 0)
+		return (-1);
 	else
 		return (1);
 }
