@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 15:21:47 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/29 14:36:14 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/11/29 14:36:59 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ static int		format_test(int fd)
 		else if (i != 20 && ((i + 1) % 5 != 0 && !(*buffer == '#'
 						|| *buffer == '.')))
 			return (-1);
-		write(1, &buffer[0], 1); // DEBUGG
 		i = (i + 1) % 21; 
 	}
 	return (1);
