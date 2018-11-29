@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 14:56:46 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/29 12:12:15 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/11/29 14:37:54 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@
 */
 
 # define BUFF_SIZE 1
+
+int				wrap_test(char *file_path);
+
 
 /*
 ** Structure storing tetriminos
