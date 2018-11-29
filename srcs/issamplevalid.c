@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 15:21:47 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/29 15:04:29 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/11/29 15:07:13 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int		format_test(int fd)
 	while ((ret = (int)read(fd, buffer, BUFF_SIZE)) > 0 && i < 21)
 	{
 		if (*buffer == '#')
-			hash_nb++;
+			++hash_nb;
 		if (hash_nb > 4)
 			return (-1);
 		if ((i == 20 || (i + 1) % 5 == 0) && *buffer != '\n')
@@ -59,12 +59,15 @@ static int		tetriminos_validity(int fd)
 	{
 		if (*buffer == '.' )
 		{
-			write(1, "0", 1i);
-			u++;
+			write(1, "0", 1);
+			++u;
 		}
 		else if (*buffer == '#')
+		{
 			write(1, "1", 1);
-		i++;
+			++u;
+		}
+		++i;
 	}	
 
 	return (1);
