@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 14:56:46 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/28 15:13:13 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/11/29 12:12:15 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@
 # include <sys/uio.h>
 # include <unistd.h>
 # include <stdlib.h>
+
+/*
+** issamplevalid.c
+*/
+
+# define BUFF_SIZE 1
 
 /*
 ** Structure storing tetriminos
