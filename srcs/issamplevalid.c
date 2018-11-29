@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 15:21:47 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/29 12:36:28 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/11/29 12:57:34 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,25 +30,16 @@ int		format_test(char *file_path)
 		return (-1);
 	else
 	{
-		i = -1;
-		while ((ret = (int)read(fd, buffer, BUFF_SIZE)) > 0 && ++i < 21)
+		i = 0;
+		while ((ret = (int)read(fd, buffer, BUFF_SIZE)) > 0 && i < 21)
 		{
+			if ((i == 20 || (i + 1) % 5 == 0) && *buffer != '\n')
+				return (-1);
+			else if (i != 20 && ((i + 1) % 5 != 0 && !(*buffer == '#'
+							|| *buffer == '.')))
+				return (-1);
 			write(1, &buffer[0], 1); // DEBUGG
-			if (i == 20 && *buffer != '\n')
-			{
-//				write (1, "O", 1);
-				return (-1);
-			}
-			else if ((i + 1) % 5 != 0 && !(*buffer == '#' || *buffer == '.'))
-			{
-				write(1, "K", 1);
-				return (-1);
-			}
-			else if ((i + 1) % 5 == 0 && *buffer != '\n')
-			{
-//				write (1, "P", 1);
-				return (-1);
-			}
+			i = (i + 1) % 21; 
 		}
 		return (1);
 	}
