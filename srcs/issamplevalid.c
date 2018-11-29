@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 15:21:47 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/29 14:01:47 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/11/29 14:36:14 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 #include <unistd.h> // temp
 #include <stdio.h> // temp
 
-int		format_test(int fd)
+static int		format_test(int fd)
 {
 	int		ret;
 	int		i;
@@ -51,6 +51,7 @@ int		wrap_test(char *file_path)
 		return (-1);
 	if (check == -1)
 		return (-1);
+
 	else
 		return (1);
 }
