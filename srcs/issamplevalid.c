@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 15:21:47 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/29 12:32:13 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/11/29 12:36:28 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,11 @@ int		format_test(char *file_path)
 //				write (1, "O", 1);
 				return (-1);
 			}
-		//	else if (*buffer == '#')
-		//	else if (*buffer == '.')
+			else if ((i + 1) % 5 != 0 && !(*buffer == '#' || *buffer == '.'))
+			{
+				write(1, "K", 1);
+				return (-1);
+			}
 			else if ((i + 1) % 5 == 0 && *buffer != '\n')
 			{
 //				write (1, "P", 1);
