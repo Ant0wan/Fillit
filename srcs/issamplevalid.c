@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 15:21:47 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/29 15:07:13 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/11/29 15:25:28 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static int		format_test(int fd)
 	return (1);
 }
 
-static int		tetriminos_validity(int fd)
+static int		char_to_tetri(int fd)
 {
 	int				u;
 	int				i;
@@ -53,23 +53,20 @@ static int		tetriminos_validity(int fd)
 	char			buffer[BUFF_SIZE];
 
 	i = 0;
-	u = 0;
-	(void)tetriminos;
+	u = 15;
+	tetriminos = 0x00;
 	while (read(fd, buffer, BUFF_SIZE) > 0 && i < 21)
 	{
 		if (*buffer == '.' )
-		{
-			write(1, "0", 1);
-			++u;
-		}
+			--u;
 		else if (*buffer == '#')
 		{
-			write(1, "1", 1);
-			++u;
+			tetriminos = tetriminos | (1 << u);
+			--u;
 		}
 		++i;
-	}	
-
+	}
+//	printf("tetri: %d\n", tetriminos);
 	return (1);
 }
 
@@ -87,7 +84,7 @@ int		wrap_test(char *file_path)
 		return (-1);
 	if ((fd = open(file_path, O_RDONLY)) < 0)
 		return (-1);
-	check = tetriminos_validity(fd);
+	check = char_to_tetri(fd);
 	if ((close(fd)) < 0)
 		return (-1);
 	else
