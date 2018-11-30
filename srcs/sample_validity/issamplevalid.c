@@ -6,27 +6,16 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 14:29:58 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/30 15:22:50 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/11/30 16:11:21 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "fillit.h"
+#include "fillit.h"
 
-#define BLOCK_SIZE 21
-#include <fcntl.h> // temp
-#include <unistd.h> // temp
-#include <stdio.h> // temp
-
-int				ft_format_test(int fd);
-
-int				ft_is_tetri_valid(unsigned short tetriminos);
-
-unsigned short	ft_block_to_tetri(char *str);
-
-int		issamplevalid(char *argv)
+int			issamplevalid(char *argv)
 {
 	int		fd;
-	int 	ret;
+	int		ret;
 	char	buf[BLOCK_SIZE];
 
 	if ((fd = open(argv, O_RDONLY)) == -1)
@@ -43,7 +32,7 @@ int		issamplevalid(char *argv)
 			close(fd);
 			return (-1);
 		}
-	else if ((close(fd)) == -1)
+	if ((close(fd)) == -1)
 		return (-1);
 	return (ret);
 }
