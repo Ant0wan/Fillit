@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 15:21:47 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/30 14:16:49 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/11/30 14:21:02 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,17 @@ static int		ft_count_vlinks(unsigned short tetriminos)
 	return (links_nb);
 }
 
+int				ft_count_links(unsigned short tetriminos)
+{
+	int	links_nb;
+
+	links_nb = 0;
+	links_nb = ft_count_vlinks(tetriminos) + ft_count_hlinks(tetriminos);
+	return (links_nb);
+}
+
 int		main(void)
 {
-	printf("%d\n", ft_count_vlinks(0b0110001100000000));
-	printf("%d\n", ft_count_hlinks(0b0110001100000000));
+	printf("%d\n", ft_count_links(0b0011001100000000));
 	return (0);
 }
