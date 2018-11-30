@@ -6,22 +6,25 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/29 16:13:56 by abarthel          #+#    #+#              #
-#    Updated: 2018/11/29 16:26:36 by abarthel         ###   ########.fr        #
+#    Updated: 2018/11/30 17:32:24 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #!/bin/sh
-gcc -Werror -Wall -Wextra main.c ft_format_test.c -o fillit
+gcc -Werror -Wall -Wextra main.c sample_validity/*.c -I ../includes/ -o fillit
 echo "====> VALID OUTPUT <======"
-./fillit ./test_samples/valid_sample.fillit
+./fillit ../test_samples/valid_sample.fillit
 #time ./fillit ./test_samples/valid_sample.fillit
 echo "====> INVALID OUTPUT <===="
-./fillit ./test_samples/invalid_sample.fillit
+./fillit ../test_samples/invalid_sample.fillit
 #time ./fillit ./test_samples/invalid_sample.fillit
 echo "====> INV1 OUTPUT <======="
-./fillit ./test_samples/inv1.fillit
+./fillit ../test_samples/inv1.fillit
 #time ./fillit ./test_samples/inv1.fillit
 echo "====> INV2 OUTPUT <======="
-./fillit ./test_samples/inv2.fillit
+./fillit ../test_samples/inv2.fillit
 #time ./fillit ./test_samples/inv2.fillit
+echo "====> INV3 OUTPUT <======="
+./fillit ../test_samples/inv3.fillit
+#time ./fillit ./test_samples/inv3.fillit
 rm -f fillit
