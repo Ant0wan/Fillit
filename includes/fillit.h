@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 14:56:46 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/29 14:37:54 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/11/30 11:23:00 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ typedef struct	s_tetriminos
 
 enum	e_masks
 {
-	mask1 = 0x00, // Not valid
+	h_mask = 0b0000000000000011, // Not valid
 	mask2 = 0x01, // Not valid
 };
 
