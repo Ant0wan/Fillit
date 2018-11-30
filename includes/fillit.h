@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 14:56:46 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/30 11:23:00 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/11/30 11:25:05 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@
 
 int				wrap_test(char *file_path);
 
-
 /*
 ** Structure storing tetriminos
 */
@@ -44,8 +43,8 @@ typedef struct	s_tetriminos
 
 enum	e_masks
 {
-	h_mask = 0b0000000000000011, // Not valid
-	mask2 = 0x01, // Not valid
+	h_mask = 0b0000000000000011,
+	mask2 = 0x01,
 };
 
 #endif
