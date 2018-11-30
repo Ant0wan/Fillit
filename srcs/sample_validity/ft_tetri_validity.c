@@ -6,24 +6,11 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 15:21:47 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/30 14:30:32 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/11/30 16:09:11 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// is sample and pieces valid ?
-//count nb of pieces
-
-//#include "fillit.h"
-#define BUFF_SIZE 1 // temporary
-#include <fcntl.h> // temp
-#include <unistd.h> // temp
-#include <stdio.h> // temp
-
-enum	e_masks // TO DEL 'CAUSE IN .H ALREADY
-{
-		h_mask = 0b0000000000000011,
-		v_mask = 0b0000000000000001,
-};
+#include "fillit.h"
 
 static int		ft_count_hlinks(unsigned short tetriminos)
 {
@@ -58,7 +45,7 @@ static int		ft_count_vlinks(unsigned short tetriminos)
 		links_nb = a >> i & v_mask ? links_nb + 1 : links_nb;
 		links_nb = b >> i & v_mask ? links_nb + 1 : links_nb;
 		links_nb = c >> i & v_mask ? links_nb + 1 : links_nb;
-	 	++i;
+		++i;
 	}
 	return (links_nb);
 }
