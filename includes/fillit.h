@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 14:56:46 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/30 11:49:25 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/11/30 14:36:18 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@
 ** issamplevalid.c
 */
 
-# define BUFF_SIZE 1
+# define BUFF_SIZE   1
+# define BLOCK_SIZE 21
 
 int				wrap_test(char *file_path);
 
