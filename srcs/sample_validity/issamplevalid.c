@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 14:29:58 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/30 15:08:19 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/11/30 15:22:50 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,4 @@ int		issamplevalid(char *argv)
 	else if ((close(fd)) == -1)
 		return (-1);
 	return (ret);
-}
-
-int	main(int argc, char **argv)
-{
-	printf("valid ? => %d\n", issamplevalid(argv[1]));
-	return (0);
 }
