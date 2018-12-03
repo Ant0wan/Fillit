@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 14:56:46 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/03 15:10:13 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/03 15:44:12 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,6 @@
 
 # define BUFF_SIZE   1
 # define BLOCK_SIZE 21
-
-/*
-** Structure storing tetriminos
-*/
-
-typedef struct	s_tetriminos
-{
-	unsigned short	elem;
-	void			*next;
-}				t_tetriminos;
 
 /*
 ** Enum holding the binary masks for testing tetriminos validity
@@ -51,6 +41,8 @@ enum	e_masks
 unsigned short	ft_block_to_tetri(char *str);
 
 unsigned short	*ft_stock_tetri(int nb, char *av);
+
+unsigned char	*ft_mapsize(int nb);
 
 int				ft_format_test(int fd);
 
