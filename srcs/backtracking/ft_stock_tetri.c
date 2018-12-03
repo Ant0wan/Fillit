@@ -6,17 +6,11 @@
 /*   By: aquan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 13:12:48 by aquan             #+#    #+#             */
-/*   Updated: 2018/12/03 14:38:55 by aquan            ###   ########.fr       */
+/*   Updated: 2018/12/03 14:51:39 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <fcntl.h>
-#include <sys/types.h>
-#include <sys/uio.h>
-#include <unistd.h>
-#include "../../includes/fillit.h"
+#include "fillit.h"
 
 unsigned short	*ft_stock_tetri(int nb, int fd)
 {
