@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 14:56:46 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/03 14:54:50 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/03 15:10:13 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ enum	e_masks
 */
 
 unsigned short	ft_block_to_tetri(char *str);
+
+unsigned short	*ft_stock_tetri(int nb, char *av);
 
 int				ft_format_test(int fd);
 
