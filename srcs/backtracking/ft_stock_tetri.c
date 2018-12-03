@@ -6,28 +6,38 @@
 /*   By: aquan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 13:12:48 by aquan             #+#    #+#             */
-/*   Updated: 2018/12/03 14:51:39 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/03 15:07:20 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-unsigned short	*ft_stock_tetri(int nb, int fd)
+unsigned short	*ft_stock_tetri(int nb, char *av)
 {
 	unsigned short *map;
 	int i;
+	int fd;
+	char buf[BLOCK_SIZE];
 
-	if (!(map = (unsigned short*)malloc(sizeof(*map) * nb)))
-		return (NULL);
-	i = 0;
-	while (i < nb)
+	if ((fd = open(av, O_RDONLY)) == -1)
+		return(NULL);
+	else
 	{
-		fd = open(argv[1], O_RDONLY);
-		read(fd, buf, BUFF_SIZE);
-		map[i] = ft_block_to_tetri(buf);
-		++i;
-		close(fd);
+		if (!(map = (unsigned short*)malloc(sizeof(*map) * nb)))
+			return (NULL);
+		i = 0;
+		while ((read(fd, buf, BLOCK_SIZE)) > 0)
+		{
+			map[i] = ft_block_to_tetri(buf);
+			++i;
+		}
 	}
-	return (map);
+	if ((close(fd)) == -1)
+	{
+		free(map);
+		return (NULL);
+	}
+	else
+		return (map);
 }
 
