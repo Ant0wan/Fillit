@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/03 15:24:10 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/05 14:24:56 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/05 15:03:05 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ unsigned char	*ft_mapsize(int nb)
 	u = sq % 8;
 	if (u != 0)
 		i = i + 1;
-	if (!(mapsize = (unsigned char*)malloc(sizeof(unsigned char) * i)))
+	printf("nb of char: %d\n", i);
+	if (!(mapsize = (unsigned char*)ft_memalloc(sizeof(unsigned char) * i)))
 		return (NULL);
 	return (mapsize);
 }
