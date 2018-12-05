@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 14:56:46 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/05 15:09:44 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/05 17:45:20 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ int				ft_format_test(int fd);
 int				ft_is_tetri_valid(unsigned short tetriminos);
 
 int				issamplevalid(char *argv);
+
+int				ft_mapminsize(int nb_tetri);
 
 void			ft_printbit(unsigned char byte);
 
