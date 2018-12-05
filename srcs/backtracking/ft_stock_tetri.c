@@ -6,7 +6,7 @@
 /*   By: aquan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 13:12:48 by aquan             #+#    #+#             */
-/*   Updated: 2018/12/03 15:07:20 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/05 15:37:09 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 unsigned short	*ft_stock_tetri(int nb, char *av)
 {
-	unsigned short *map;
-	int i;
-	int fd;
-	char buf[BLOCK_SIZE];
+	unsigned short	*map;
+	int				i;
+	int				fd;
+	char			buf[BLOCK_SIZE];
 
 	if ((fd = open(av, O_RDONLY)) == -1)
 		return(NULL);
 	else
 	{
-		if (!(map = (unsigned short*)malloc(sizeof(*map) * nb)))
+		if (!(map = (unsigned short*)ft_memalloc(sizeof(*map) * nb)))
 			return (NULL);
 		i = 0;
 		while ((read(fd, buf, BLOCK_SIZE)) > 0)

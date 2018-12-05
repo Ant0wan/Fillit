@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printbit.c                                      :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/03 16:29:23 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/05 16:25:00 by abarthel         ###   ########.fr       */
+/*   Created: 2018/11/09 14:08:32 by abarthel          #+#    #+#             */
+/*   Updated: 2018/12/05 15:06:26 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-void	ft_printbit(unsigned char byte)
+void	*ft_memalloc(size_t size)
 {
-	if ((byte & (1 << 0)) == 1)
-		write(1, "1", 1);
-	else
-		write(1, "0", 1);
+	void	*p_mem;
+
+	p_mem = (void*)malloc(size);
+	if (!p_mem)
+		return (NULL);
+	ft_bzero(p_mem, size);
+	return (p_mem);
 }

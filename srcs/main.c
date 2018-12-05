@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 17:21:00 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/03 16:22:40 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/05 15:59:10 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	print_tetri_test(unsigned short *tab, int nb) // DEBUGG FT
 	i = 0;
 	while (i < nb)
 	{
-		printf("elem %d: %d\n", i + 1, tab[i]);
+		printf("\telem %d: %d\n", i + 1, tab[i]);
 		++i;
 	}
 }
@@ -41,17 +41,17 @@ int		main(int argc, char **argv)
 			write(1, "error\n", 6);
 		else
 		{
-			printf("nb of tetri: %d\n", nb_tetri);
-			write(1, "Sotckage tetriminos ==> \n", 25); // backtracking algo
+			printf("> Number of tetriminos: %d\n", nb_tetri);
 			tab_tetri = ft_stock_tetri(nb_tetri, argv[1]);
 			print_tetri_test(tab_tetri, nb_tetri);
-			map = ft_mapsize(nb_tetri);
-			map[0] = 0b00000000;
-			map[1] = 0b00000001;
-			map[2] = 0b10000000;
-			printf("map 0 : %d\n", map[0]);
-			printf("map 1 : %d\n", map[1]);
-			printf("map 2 : %d\n", map[2]);
+			write(1, "\n", 1);
+			map = ft_mapsize(4);
+			map[0] = 0b11101000;
+			map[1] = 0b10000001;
+			write(1, "\n>      MAP     <\n\t", 19); // DEBUGG
+			ft_printmap(map, 4);
+			write(1, "\n", 1);
+			write(1, "\n", 1);
 		}
 	
 	free(map);
