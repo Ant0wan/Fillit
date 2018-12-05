@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/03 16:28:29 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/05 16:29:14 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/05 17:19:27 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	ft_printmap(unsigned char *map, int nb)
 	{
 		if (i % nb == 0 && i)
 			write(1, "\n\t", 2);
-		ft_printbit(map[i / 8] << (7 - i));
-	//	printf("%d\n", i / 8);
+		ft_printbit(map[i / 8] << (i % 8));
 	}
 }
