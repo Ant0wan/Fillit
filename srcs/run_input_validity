@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/29 16:13:56 by abarthel          #+#    #+#              #
-#    Updated: 2018/12/05 14:48:45 by abarthel         ###   ########.fr        #
+#    Updated: 2018/12/05 18:39:05 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,9 @@
 gcc -Werror -Wall -Wextra main.c sample_validity/*.c backtracking/*.c output/*.c -I ../includes/ -o fillit
 echo "====> VALID OUTPUT <======"
 ./fillit ../test_samples/valid_sample.fillit
+#time ./fillit ./test_samples/valid_sample.fillit
+#echo "====> HARDCORE VALID OUTPUT <======"
+#./fillit ../test_samples/hardcore_valid_sample.fillit
 #time ./fillit ./test_samples/valid_sample.fillit
 echo "====> INVALID OUTPUT <===="
 ./fillit ../test_samples/invalid_sample.fillit
