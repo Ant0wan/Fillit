@@ -1,38 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mapsize.c                                       :+:      :+:    :+:   */
+/*   ft_printbit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/03 15:24:10 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/05 14:24:56 by abarthel         ###   ########.fr       */
+/*   Created: 2018/12/03 16:29:23 by abarthel          #+#    #+#             */
+/*   Updated: 2018/12/05 14:31:14 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-/*
-** nb: side length of the square, starts min with 4bytes(16bits)
-*/
-
-unsigned char	*ft_mapsize(int nb)
+void	ft_printbit(unsigned char byte)
 {
-	int				i;
-	int				u;
-	int				sq;
-	unsigned char	*mapsize;
+	unsigned char	mask;
 
-	if (nb < 4)
-		return (NULL);
-	i = 0;
-	u = 0;
-	sq = nb * nb;
-	i = sq / 8;
-	u = sq % 8;
-	if (u != 0)
-		i = i + 1;
-	if (!(mapsize = (unsigned char*)malloc(sizeof(unsigned char) * i)))
-		return (NULL);
-	return (mapsize);
+	mask = 0b00000001;
+	if ((byte << 0 & mask) == 1)
+		write(1, "1", 1);
+	else
+		write(1, "0", 1);
 }

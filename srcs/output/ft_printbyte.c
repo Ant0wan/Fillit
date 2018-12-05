@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mapsize.c                                       :+:      :+:    :+:   */
+/*   ft_printbyte.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/03 15:24:10 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/05 14:24:56 by abarthel         ###   ########.fr       */
+/*   Created: 2018/12/03 16:29:23 by abarthel          #+#    #+#             */
+/*   Updated: 2018/12/03 17:01:23 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+//#include "fillit.h"
 
-/*
-** nb: side length of the square, starts min with 4bytes(16bits)
-*/
+#include <unistd.h>
 
-unsigned char	*ft_mapsize(int nb)
+void	ft_printbyte(unsigned char byte)
 {
-	int				i;
-	int				u;
-	int				sq;
-	unsigned char	*mapsize;
+	int	i;
+	unsigned char	mask;
 
-	if (nb < 4)
-		return (NULL);
-	i = 0;
-	u = 0;
-	sq = nb * nb;
-	i = sq / 8;
-	u = sq % 8;
-	if (u != 0)
-		i = i + 1;
-	if (!(mapsize = (unsigned char*)malloc(sizeof(unsigned char) * i)))
-		return (NULL);
-	return (mapsize);
+	i = 8;
+	mask = 0b00000001;
+	while (--i >= 0)
+		if ((byte >> i & mask) == 1)
+			write(1, "1", 1);
+		else
+			write(1, "0", 1);
+}
+
+int	main(void)
+{
+	ft_printbyte(0b00010001);
+	return (0);
 }
