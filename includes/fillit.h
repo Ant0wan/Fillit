@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 14:56:46 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/05 17:45:20 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/06 15:33:45 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,11 @@ enum	e_masks
 	h_mask = 0b0000000000000011,
 	v_mask = 0b0000000000000001,
 	n_mask = 0b0000000000000000,
+	l_mask1 = 0b1000000000000000,
+	l_mask2 = 0b0000100000000000,
+	l_mask3 = 0b0000000010000000,
+	l_mask4 = 0b0000000000001000,
+	up_mask = 0b1111000000000000,
 };
 
 /*
@@ -59,5 +64,7 @@ void			ft_printmap(unsigned char *map, int nb);
 void			ft_bzero(void *s, size_t n);
 
 void			*ft_memalloc(size_t size);
+
+void			ft_position_x(unsigned char *map, unsigned short tetriminos, int map_nb);
 
 #endif
