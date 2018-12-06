@@ -6,7 +6,7 @@
 /*   By: aquan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 17:51:01 by aquan             #+#    #+#             */
-/*   Updated: 2018/12/05 18:14:27 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/06 15:38:28 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,5 @@ int		ft_mapminsize(int nb_tetri)
 		if (nb_bits == i * i)
 			return (i);
 	}
-	++i;
 	return (i);
 }
