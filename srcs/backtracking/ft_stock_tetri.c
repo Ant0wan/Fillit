@@ -6,15 +6,30 @@
 /*   By: aquan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 13:12:48 by aquan             #+#    #+#             */
-/*   Updated: 2018/12/05 15:37:09 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/06 15:33:10 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-unsigned short	*ft_stock_tetri(int nb, char *av)
+static unsigned short	ft_pushleft(unsigned short tetriminos)
 {
-	unsigned short	*map;
+	unsigned short	tetriminos_lefted;
+
+	tetriminos_lefted = tetriminos;
+	while ((tetriminos_lefted & l_mask1) != l_mask1
+			&& (tetriminos_lefted & l_mask2) != l_mask2
+			&& (tetriminos_lefted & l_mask3) != l_mask3
+			&& (tetriminos_lefted & l_mask4) != l_mask4)
+		tetriminos_lefted = tetriminos_lefted << 1;
+	while (tetriminos_lefted == (tetriminos_lefted & ~ (0b1111000000000000)))
+		tetriminos_lefted = tetriminos_lefted << 4;
+	return (tetriminos_lefted);
+}
+
+unsigned short			*ft_stock_tetri(int nb, char *av)
+{
+	unsigned short	*tab_tetri;
 	int				i;
 	int				fd;
 	char			buf[BLOCK_SIZE];
@@ -23,21 +38,21 @@ unsigned short	*ft_stock_tetri(int nb, char *av)
 		return(NULL);
 	else
 	{
-		if (!(map = (unsigned short*)ft_memalloc(sizeof(*map) * nb)))
+		if (!(tab_tetri = (unsigned short*)ft_memalloc(sizeof(*tab_tetri) * nb)))
 			return (NULL);
 		i = 0;
 		while ((read(fd, buf, BLOCK_SIZE)) > 0)
 		{
-			map[i] = ft_block_to_tetri(buf);
+			tab_tetri[i] = ft_pushleft(ft_block_to_tetri(buf));
 			++i;
 		}
 	}
 	if ((close(fd)) == -1)
 	{
-		free(map);
+		free(tab_tetri);
 		return (NULL);
 	}
 	else
-		return (map);
+		return (tab_tetri);
 }
 
