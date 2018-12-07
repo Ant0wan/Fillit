@@ -6,7 +6,7 @@
 /*   By: aquan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/06 12:05:10 by aquan             #+#    #+#             */
-/*   Updated: 2018/12/07 16:05:45 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/07 16:13:54 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,43 +32,43 @@ void	ft_position_x(unsigned char *map, unsigned short tetriminos, int map_nb)
 	if (i < nb_bytes)
 	{
 		/* First 4 bits in the unsignd short */
-		map[i / 8] = map[i / 8] | 1 << (7 - (diff * (i / 4)));
+		map[i / 8] = map[i / 8] | 1 << ((((7 - (diff * (i / 4))) % 8) + 8) % 8);
 		++i;
 		++c;
-		map[i / 8] = map[i / 8] | 1 << (6 - (diff * (i / 4)));
+		map[i / 8] = map[i / 8] | 1 << ((((6 - (diff * (i / 4))) % 8) + 8) % 8);
 		++i;
 		++c;
-		map[i / 8] = map[i / 8] | 1 << (5 - (diff * (i / 4)));
+		map[i / 8] = map[i / 8] | 1 << ((((5 - (diff * (i / 4))) % 8) + 8) % 8);
 		++i;
 		++c;
-		map[i / 8] = map[i / 8] | 1 << (4 - (diff * (i / 4)));
+		map[i / 8] = map[i / 8] | 1 << ((((4 - (diff * (i / 4))) % 8) + 8) % 8);
 		++i;
-		i += map_nb - 4;
-		map[i / 8] = map[i / 8] | 1 << (3 - (diff * (i / 4)));
-		++i;
-		++c;
-		map[i / 8] = map[i / 8] | 1 << (2 - (diff * (i / 4)));
+//		i += map_nb - 4;
+		map[i / 8] = map[i / 8] | 1 << ((((3 - (diff * (i / 4))) % 8) + 8) % 8);
 		++i;
 		++c;
-		map[i / 8] = map[i / 8] | 1 << (1 - (diff * (i / 4)));
+		map[i / 8] = map[i / 8] | 1 << ((((2 - (diff * (i / 4))) % 8) + 8) % 8);
 		++i;
 		++c;
-		map[i / 8] = map[i / 8] | 1 << (0 - (diff * (i / 4)));
-		++i;
-		i += map_nb - 4;
-		map[i / 8] = map[i / 8] | 1 << (7 - (diff * (i / 4)));
+		map[i / 8] = map[i / 8] | 1 << ((((1 - (diff * (i / 4))) % 8) + 8) % 8);
 		++i;
 		++c;
-		map[i / 8] = map[i / 8] | 1 << (6 - (diff * (i / 4)));
+		map[i / 8] = map[i / 8] | 1 << ((((0 - (diff * (i / 4))) % 8) + 8) % 8);
+		++i;
+//		i += map_nb - 4;
+		map[i / 8] = map[i / 8] | 1 << ((((7 - (diff * (i / 4))) % 8) + 8) % 8);
 		++i;
 		++c;
-		map[i / 8] = map[i / 8] | 1 << (5 - (diff * (i / 4)));
+		map[i / 8] = map[i / 8] | 1 << ((((6 - (diff * (i / 4))) % 8) + 8) % 8);
 		++i;
 		++c;
-		map[i / 8] = map[i / 8] | 1 << (4 - (diff * (i / 4)));
+		map[i / 8] = map[i / 8] | 1 << ((((5 - (diff * (i / 4))) % 8) + 8) % 8);
 		++i;
-		i += map_nb - 4;
-		map[i / 8] = map[i / 8] | 1 << (3 - (diff * (i / 4)));
+		++c;
+		map[i / 8] = map[i / 8] | 1 << ((((4 - (diff * (i / 4))) % 8) + 8) % 8);
+		++i;
+//		i += map_nb - 4; only if map_nb > 4
+		map[i / 8] = map[i / 8] | 1 << ((((3 - (diff * (i / 4))) % 8) + 8) % 8);
 		++i;
 		++c;
 		map[i / 8] = map[i / 8] | 1 << ((((2 - (diff * (i / 4))) % 8) + 8) % 8);
