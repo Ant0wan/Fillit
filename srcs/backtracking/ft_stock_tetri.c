@@ -6,7 +6,7 @@
 /*   By: aquan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 13:12:48 by aquan             #+#    #+#             */
-/*   Updated: 2018/12/10 15:53:20 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/10 16:18:29 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static unsigned short	ft_pushleft(unsigned short tetriminos)
 			&& (tetriminos_lefted & l_mask3) != l_mask3
 			&& (tetriminos_lefted & l_mask4) != l_mask4)
 		tetriminos_lefted = tetriminos_lefted << 1;
-	while (tetriminos_lefted == (tetriminos_lefted & ~(0b1111000000000000)))
+	while (tetriminos_lefted == (tetriminos_lefted & ~(up_mask)))
 		tetriminos_lefted = tetriminos_lefted << 4;
 	return (tetriminos_lefted);
 }
