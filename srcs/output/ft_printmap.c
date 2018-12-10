@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/03 16:28:29 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/10 12:15:43 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/10 14:58:42 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,18 @@
 
 void	ft_printmap(unsigned int *map, int nb)
 {
-	int	i;
-	int	nb_bits;
+	int l;
+	int c;
 
-	i = -1;
-	nb_bits = nb * nb;
-	while (++i < nb_bits)
+	l = -1;
+	while (++l < nb)
 	{
-		if (i % nb == 0 && i)
-			write(1, "\n\t", 2);
-		ft_printbit(map[i / 8] << (i % 8));
+		c = -1;
+		while (++c < nb)
+		{
+			if (c % nb == 0)
+				write(1, "\n\t", 2);
+			ft_printbit(map[l] << i);
+		}
 	}
 }
