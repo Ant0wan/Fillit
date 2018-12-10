@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 14:56:46 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/10 11:46:06 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/10 14:55:01 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 # define BUFF_SIZE   1
 # define BLOCK_SIZE 21
-# define ROW_NB		16
+# define ROW_NB		32
 
 /*
 ** Enum holding the binary masks for testing tetriminos validity
@@ -60,13 +60,13 @@ int				ft_mapminsize(int nb_tetri);
 
 void			ft_printbit(unsigned char byte);
 
-void			ft_printmap(unsigned char *map, int nb);
+void			ft_printmap(unsigned int *map, int nb);
 
 void			ft_bzero(void *s, size_t n);
 
 void			*ft_memalloc(size_t size);
 
-void			ft_position_x(unsigned char *map, unsigned short tetriminos,
+void			ft_position_x(unsigned int *map, unsigned short tetriminos,
 		int map_nb);
 
 #endif
