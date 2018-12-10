@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 17:21:00 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/10 12:10:30 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/10 12:17:22 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,10 @@ int		main(int argc, char **argv)
 //			ft_position_x(map, tab_tetri[0], map_min_size);
 //			map[0] = 0b10001000;
 //			map[1] = 0b10001000;
-//			write(1, "\n>      MAP     <\n\t", 19); // DEBUGG
-//			ft_printmap(map, map_min_size);
-//			write(1, "\n", 1);
-//			write(1, "\n", 1);
+			write(1, "\n>      MAP     <\n\t", 19); // DEBUGG
+			ft_printmap(map, map_min_size);
+			write(1, "\n", 1);
+			write(1, "\n", 1);
 		}
 	
 	free(map);
