@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 14:56:46 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/10 15:55:29 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/10 16:40:16 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,8 @@ void			ft_printmap(unsigned int *map, int nb);
 void			ft_bzero(void *s, size_t n);
 
 void			*ft_memalloc(size_t size);
+
+void			ft_position(unsigned int *map, unsigned short *tab_tetri,
+		int map_nb);
 
 #endif
