@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/03 16:28:29 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/05 17:19:27 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/10 12:15:43 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ** map: unsignd char table containing the tetriminos (backtracking output)
 */
 
-void	ft_printmap(unsigned char *map, int nb)
+void	ft_printmap(unsigned int *map, int nb)
 {
 	int	i;
 	int	nb_bits;
