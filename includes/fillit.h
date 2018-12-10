@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 14:56:46 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/06 15:33:45 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/10 11:46:06 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,11 @@
 # include <sys/uio.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h> // DEBUGG, TO BE DELETED
+# include <stdio.h>
 
 # define BUFF_SIZE   1
 # define BLOCK_SIZE 21
+# define ROW_NB		16
 
 /*
 ** Enum holding the binary masks for testing tetriminos validity
@@ -47,7 +48,7 @@ unsigned short	ft_block_to_tetri(char *str);
 
 unsigned short	*ft_stock_tetri(int nb, char *av);
 
-unsigned char	*ft_mapsize(int nb);
+unsigned int	*ft_mapsize(void);
 
 int				ft_format_test(int fd);
 
@@ -65,6 +66,7 @@ void			ft_bzero(void *s, size_t n);
 
 void			*ft_memalloc(size_t size);
 
-void			ft_position_x(unsigned char *map, unsigned short tetriminos, int map_nb);
+void			ft_position_x(unsigned char *map, unsigned short tetriminos,
+		int map_nb);
 
 #endif
