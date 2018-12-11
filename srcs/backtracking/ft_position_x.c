@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_position.c                                      :+:      :+:    :+:   */
+/*   ft_position_x.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aquan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 21:36:08 by aquan             #+#    #+#             */
-/*   Updated: 2018/12/11 16:45:21 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/11 16:48:06 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-void	ft_position(unsigned int *map, unsigned short tetriminos, int map_nb)
+void	ft_position_x(unsigned int *map, unsigned short tetriminos, int map_nb)
 {
 	int	c;
 	int	l;
