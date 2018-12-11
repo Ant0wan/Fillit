@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 17:21:00 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/11 17:25:32 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/11 17:43:43 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int		main(int argc, char **argv)
 			print_tetri_test(tab_tetri, nb_tetri);
 			write(1, "\n", 1);
 			map = ft_mapsize();
-			map[0] = 0b11111111111111111111111111111111;
+			map[0] = 0b11111100000000000000000000000000;
 			map[1] = 0b00000000000000000000000000000000;
 			map[2] = 0b00000000000000000000000000000000;
 			map[3] = 0b00000000000000000000000000000000;
@@ -66,7 +66,7 @@ int		main(int argc, char **argv)
 //			map[13] = 0b00000000000000000000000000000000;
 //			map[31] = 0b00000000000000000000000000000000;
 			write(1, "\n>      MAP     <\n\t", 19); // DEBUGG
-			map_min_size = ROW_NB;
+//			map_min_size = ROW_NB;
 			ft_position_y(map, tab_tetri[0], map_min_size, 0);
 			ft_printmap(map, map_min_size);
 			write(1, "\n", 1);
