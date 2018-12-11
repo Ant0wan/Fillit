@@ -6,7 +6,7 @@
 /*   By: aquan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 21:36:08 by aquan             #+#    #+#             */
-/*   Updated: 2018/12/11 15:02:39 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/11 16:45:21 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@ void	ft_position(unsigned int *map, unsigned short tetriminos, int map_nb)
 	int	c;
 	int	l;
 	int n;
+	char	thick;
 
 	c = ROW_NB / 2;
 	n = 0;
 	l = 0;
-	while ((c || n < ROW_NB / 2) &&
+	thick = ft_thickness(tetriminos);
+	while ((c || n < ROW_NB / 2 - thick) &&
 			(map[l] & ((tetriminos & ~(part0_m)) << c) >> n
 			 || map[l + 1] & (((tetriminos & ~(part1_m)) << 4) << c) >> n
 			 || map[l + 2] & (((tetriminos & ~(part2_m)) << 8) << c) >> n
