@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/03 16:28:29 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/11 17:34:35 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/11 18:02:29 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ void	ft_printmap(unsigned int *map, int nb)
 
 	l = -1;
 	(void)nb;
-	while (++l < nb)
+	while (++l < ROW_NB) // nb
 	{
 		c = -1;
-		while (++c < nb)
+		while (++c < ROW_NB) // nb
 		{
 			if (c % ROW_NB == 0)
 				write(1, "\n\t", 2);

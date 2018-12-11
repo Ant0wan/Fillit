@@ -6,7 +6,7 @@
 /*   By: aquan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 21:36:08 by aquan             #+#    #+#             */
-/*   Updated: 2018/12/11 17:43:15 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/11 18:00:53 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ int	ft_position_x(unsigned int *map, unsigned short tetriminos, int map_nb, int 
 		else
 			++n;
 	}
-	if ((ROW_NB / 2 - c + n) < map_nb - thick
-			&& (map[l] | (((tetriminos & ~(part0_m)) << c) >> n))
+	if (
+			 (map[l] | (((tetriminos & ~(part0_m)) << c) >> n))
 			== (map[l] ^(((tetriminos & ~(part0_m)) << c) >> n))
 			&& (map[l + 1] | ((((tetriminos & ~(part1_m)) << 4) << c) >> n))
 			== (map[l + 1] ^((((tetriminos & ~(part1_m)) << 4) << c) >> n))
