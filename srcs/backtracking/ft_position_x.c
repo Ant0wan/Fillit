@@ -6,22 +6,20 @@
 /*   By: aquan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 21:36:08 by aquan             #+#    #+#             */
-/*   Updated: 2018/12/11 17:11:51 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/11 17:17:56 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-void	ft_position_x(unsigned int *map, unsigned short tetriminos, int map_nb)
+void	ft_position_x(unsigned int *map, unsigned short tetriminos, int map_nb, int l)
 {
-	int	c;
-	int	l;
-	int n;
+	int		n;
+	int		c;
 	char	thick;
 
-	c = ROW_NB / 2;
 	n = 0;
-	l = 0;
+	c = ROW_NB / 2;
 	thick = ft_thickness(tetriminos);
 	while (((c || n < ROW_NB / 2 - thick) && (ROW_NB / 2 - c + n) < map_nb) &&
 			(map[l] & ((tetriminos & ~(part0_m)) << c) >> n
