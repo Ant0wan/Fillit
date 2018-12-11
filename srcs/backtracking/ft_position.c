@@ -6,7 +6,7 @@
 /*   By: aquan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 21:36:08 by aquan             #+#    #+#             */
-/*   Updated: 2018/12/11 14:13:59 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/11 14:15:47 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,16 @@ void	ft_position(unsigned int *map, unsigned short tetriminos, int map_nb)
 	c = ROW_NB / 2;
 	n = 0;
 	l = 0;
-	while (c &&
+	while ((c || n < ROW_NB / 2) &&
 			(map[l] & ((tetriminos & ~(part0_m)) << c) >> n
 			 || map[l + 1] & (((tetriminos & ~(part1_m)) << 4) << c) >> n
 			 || map[l + 2] & (((tetriminos & ~(part2_m)) << 8) << c) >> n
 			 || map[l + 3] & (((tetriminos & ~(part3_m)) << 12) << c) >> n))
 	{
-		--c;
+		if (c)
+			--c;
+		else
+			++n;
 	}
 	if ((map[l] | (((tetriminos & ~(part0_m)) << c) >> n)) == (map[l] ^(((tetriminos & ~(part0_m)) << c) >> n)) && (map[l + 1] | ((((tetriminos & ~(part1_m)) << 4) << c) >> n)) == (map[l + 1] ^((((tetriminos & ~(part1_m)) << 4) << c) >> n)) && (map[l + 2] | ((((tetriminos & ~(part2_m)) << 8) << c) >> n)) == (map[l + 2] ^((((tetriminos & ~(part2_m)) << 8) << c) >> n)) && (map[l + 3] | ((((tetriminos & ~(part3_m)) << 12) << c) >> n)) == (map[l + 3] ^((((tetriminos & ~(part3_m)) << 12) << c) >> n)))
 	{
