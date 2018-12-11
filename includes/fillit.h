@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 14:56:46 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/11 16:48:18 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/11 17:19:47 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,9 @@ void			ft_bzero(void *s, size_t n);
 void			*ft_memalloc(size_t size);
 
 void			ft_position_x(unsigned int *map, unsigned short tetriminos,
+		int map_nb, int l);
+
+void			ft_position_y(unsigned int *map, unsigned short tetriminos,
 		int map_nb);
 
 char			ft_thickness(unsigned short tetriminos);
