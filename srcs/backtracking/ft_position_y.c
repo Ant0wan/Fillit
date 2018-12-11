@@ -6,13 +6,14 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/11 17:10:51 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/11 17:18:39 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/11 17:29:05 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-void	ft_position_y(unsigned int *map, unsigned short tetriminos, int map_nb)
+void	ft_position_y(unsigned int *map, unsigned short tetriminos, int map_nb, int l)
 {
-	ft_position_x(map, tetriminos, map_nb, 0);	
+	if (!(ft_position_x(map, tetriminos, map_nb, l)))
+		ft_position_y(map, tetriminos, map_nb, ++l);	
 }

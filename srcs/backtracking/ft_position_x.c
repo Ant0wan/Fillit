@@ -6,13 +6,13 @@
 /*   By: aquan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 21:36:08 by aquan             #+#    #+#             */
-/*   Updated: 2018/12/11 17:17:56 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/11 17:30:03 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-void	ft_position_x(unsigned int *map, unsigned short tetriminos, int map_nb, int l)
+int	ft_position_x(unsigned int *map, unsigned short tetriminos, int map_nb, int l)
 {
 	int		n;
 	int		c;
@@ -45,8 +45,8 @@ void	ft_position_x(unsigned int *map, unsigned short tetriminos, int map_nb, int
 		map[l + 1] = map[l + 1] | (((tetriminos & ~(part1_m)) << 4) << c) >> n;
 		map[l + 2] = map[l + 2] | (((tetriminos & ~(part2_m)) << 8) << c) >> n;
 		map[l + 3] = map[l + 3] | (((tetriminos & ~(part3_m)) << 12) << c) >> n;
+		return (1);
 	}
-	printf("c = %d\n", c);
-	printf("\tn = %d\n", n);
-	(void)map_nb;
+	else
+		return (0);
 }
