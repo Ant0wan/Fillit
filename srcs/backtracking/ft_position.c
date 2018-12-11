@@ -6,7 +6,7 @@
 /*   By: aquan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 21:36:08 by aquan             #+#    #+#             */
-/*   Updated: 2018/12/11 12:31:59 by aquan            ###   ########.fr       */
+/*   Updated: 2018/12/11 12:40:17 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_position(unsigned int *map, unsigned short tetriminos, int map_nb)
 	l = 0;
 	while (c && (map[l] & ((tetriminos & ~(part0_m)) << c)))
 		--c;
-	if (!(map[l] & ((tetriminos & ~(part0_m)) << c)))
+	if ((map[l] | ((tetriminos & ~(part0_m)) << c)) == (map[l] ^((tetriminos & ~(part0_m)) << c)) && (map[l + 1] | (((tetriminos & ~(part1_m)) << 4) << c)) == (map[l + 1] ^(((tetriminos & ~(part1_m)) << 4) << c)) && (map[l + 2] | (((tetriminos & ~(part2_m)) << 8) << c)) == (map[l + 2] ^(((tetriminos & ~(part2_m)) << 8) << c)) && (map[l + 3] | (((tetriminos & ~(part3_m)) << 12) << c)) == (map[l + 3] ^(((tetriminos & ~(part3_m)) << 12) << c)))
 	{
 		map[l] = map[l] | (tetriminos & ~(part0_m)) << c;
 		map[l + 1] = map[l + 1] | ((tetriminos & ~(part1_m)) << 4) << c;
@@ -36,7 +36,7 @@ void	ft_position(unsigned int *map, unsigned short tetriminos, int map_nb)
 		while (!(((tetriminos & ~(part0_m)) >> n) % 2) &&
 				(map[l] & ((tetriminos & ~(part0_m)) >> n)))
 			n++;
-		if (!(map[l] & ((tetriminos & ~(part0_m)) >> n)))
+		if ((map[l] | ((tetriminos & ~(part0_m)) << c)) == (map[l] ^((tetriminos & ~(part0_m)) << c)) && (map[l + 1] | (((tetriminos & ~(part1_m)) << 4) << c)) == (map[l + 1] ^(((tetriminos & ~(part1_m)) << 4) << c)) && (map[l + 2] | (((tetriminos & ~(part2_m)) << 8) << c)) == (map[l + 2] ^(((tetriminos & ~(part2_m)) << 8) << c)) && (map[l + 3] | (((tetriminos & ~(part3_m)) << 12) << c)) == (map[l + 3] ^(((tetriminos & ~(part3_m)) << 12) << c)))
 		{
 			map[l] = map[l] | (tetriminos & ~(part0_m)) >> n;
 			map[l + 1] = map[l + 1] | ((tetriminos & ~(part1_m)) << 4) >> n;
