@@ -6,7 +6,7 @@
 /*   By: aquan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 21:36:08 by aquan             #+#    #+#             */
-/*   Updated: 2018/12/11 16:53:38 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/11 17:11:51 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,14 @@ void	ft_position_x(unsigned int *map, unsigned short tetriminos, int map_nb)
 		else
 			++n;
 	}
-	if ((map[l] | (((tetriminos & ~(part0_m)) << c) >> n)) == (map[l] ^(((tetriminos & ~(part0_m)) << c) >> n)) && (map[l + 1] | ((((tetriminos & ~(part1_m)) << 4) << c) >> n)) == (map[l + 1] ^((((tetriminos & ~(part1_m)) << 4) << c) >> n)) && (map[l + 2] | ((((tetriminos & ~(part2_m)) << 8) << c) >> n)) == (map[l + 2] ^((((tetriminos & ~(part2_m)) << 8) << c) >> n)) && (map[l + 3] | ((((tetriminos & ~(part3_m)) << 12) << c) >> n)) == (map[l + 3] ^((((tetriminos & ~(part3_m)) << 12) << c) >> n)))
+	if ((map[l] | (((tetriminos & ~(part0_m)) << c) >> n))
+			== (map[l] ^(((tetriminos & ~(part0_m)) << c) >> n))
+			&& (map[l + 1] | ((((tetriminos & ~(part1_m)) << 4) << c) >> n))
+			== (map[l + 1] ^((((tetriminos & ~(part1_m)) << 4) << c) >> n))
+			&& (map[l + 2] | ((((tetriminos & ~(part2_m)) << 8) << c) >> n))
+			== (map[l + 2] ^((((tetriminos & ~(part2_m)) << 8) << c) >> n))
+			&& (map[l + 3] | ((((tetriminos & ~(part3_m)) << 12) << c) >> n))
+			== (map[l + 3] ^((((tetriminos & ~(part3_m)) << 12) << c) >> n)))
 	{
 		map[l] = map[l] | ((tetriminos & ~(part0_m)) << c) >> n;
 		map[l + 1] = map[l + 1] | (((tetriminos & ~(part1_m)) << 4) << c) >> n;
