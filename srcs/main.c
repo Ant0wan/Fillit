@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 17:21:00 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/12 15:56:39 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/12 16:06:04 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,12 @@ int		main(int argc, char **argv)
 			map[2] = 0b00000000000000000000000000000000;
 			map[3] = 0b00000000000000000000000000000000;
 			write(1, "\n>      MAP     <\n\t", 19); // DEBUGG
-			write(1, "12345678901234567890123456789012", 32);
 			while (i < nb_tetri)
 			{
 				printf("position : %d\n", ft_position_y(map, tab_tetri[i], map_min_size, 0));
 				++i;
 			}
+			write(1, "\t12345678901234567890123456789012", 33);
 			ft_printmap(map, map_min_size);
 			write(1, "\n", 1);
 			write(1, "\n", 1);
