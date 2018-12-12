@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 14:56:46 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/11 17:28:20 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/12 13:51:34 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,7 @@ void			ft_position_y(unsigned int *map, unsigned short tetriminos,
 		int map_nb, int l);
 
 char			ft_thickness(unsigned short tetriminos);
+
+char			ft_height(unsigned short tetriminos);
 
 #endif

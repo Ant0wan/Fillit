@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_position_y.c                                    :+:      :+:    :+:   */
+/*   ft_height.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/11 17:10:51 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/12 13:36:47 by abarthel         ###   ########.fr       */
+/*   Created: 2018/12/11 15:02:00 by abarthel          #+#    #+#             */
+/*   Updated: 2018/12/12 14:21:20 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-void	ft_position_y(unsigned int *map, unsigned short tetriminos, int map_nb, int l)
+char	ft_height(unsigned short tetriminos)
 {
-	if (!(ft_position_x(map, tetriminos, map_nb, l)))
-		ft_position_y(map, tetriminos, map_nb, ++l);
+	if (tetriminos & ~(part3_m))
+		return (4);
+	else if ((tetriminos & ~(part2_m)) >> 4)
+		return (3);
+	else if ((tetriminos & ~(part1_m)) >> 8)
+		return (2);
+	else
+		return (1);
 }
