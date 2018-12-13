@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 17:21:00 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/13 11:59:35 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/13 13:09:23 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,12 @@ int		main(int argc, char **argv)
 			printf("Map min size %d\n", map_min_size);
 			tab_tetri = ft_stock_tetri(nb_tetri, argv[1]);
 			map = ft_mapsize();
-			map[0] = 0b11111100000000000000000000000000;
+			map[0] = 0b00000000000000000000000000000000;
 			map[1] = 0b00000000000000000000000000000000;
 			map[2] = 0b00000000000000000000000000000000;
 			map[3] = 0b00000000000000000000000000000000;
 			write(1, "\n>      MAP     <\n\t", 19); // DEBUGG
-			while (i < 1) // nb_tetri
+			while (i < nb_tetri)
 			{
 				printf("position : %d\n", ft_position_y(map, tab_tetri[i], map_min_size, 0));
 				++i;
