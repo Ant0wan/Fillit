@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 17:21:00 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/13 13:44:59 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/13 13:47:51 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	backtracking(char nb_tetri, char *av)
 {
-	int i;
-	char map_min_size;
-	unsigned int *map;
-	unsigned short *tab_tetri;
+	int				i;
+	char			map_min_size;
+	unsigned int	*map;
+	unsigned short	*tab_tetri;
 
 	i = 0;
 	map_min_size = ft_mapminsize(nb_tetri);
