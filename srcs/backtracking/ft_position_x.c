@@ -6,7 +6,7 @@
 /*   By: aquan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 21:36:08 by aquan             #+#    #+#             */
-/*   Updated: 2018/12/13 13:02:13 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/13 13:32:55 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static char	ft_isplaceable(unsigned int *map, unsigned short tetriminos,
 }
 
 char		ft_position_x(unsigned int *map, unsigned short tetriminos,
-		int map_nb, int l)
+		char map_nb, int l)
 {
 	char	n;
 	char	c;

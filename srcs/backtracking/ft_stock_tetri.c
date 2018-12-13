@@ -6,7 +6,7 @@
 /*   By: aquan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 13:12:48 by aquan             #+#    #+#             */
-/*   Updated: 2018/12/10 16:18:29 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/13 13:32:35 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static unsigned short	ft_pushleft(unsigned short tetriminos)
 	return (tetriminos_lefted);
 }
 
-unsigned short			*ft_stock_tetri(int nb, char *av)
+unsigned short			*ft_stock_tetri(char nb, char *av)
 {
 	unsigned short	*tab_tetr;
 	int				i;
