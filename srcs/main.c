@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 17:21:00 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/13 13:09:23 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/13 13:22:20 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,14 @@
 
 int		main(int argc, char **argv)
 {
-	(void)argv;
-	char	nb_tetri;
-	char	map_min_size;
-	int 	i;
-	unsigned short	*tab_tetri;
-	unsigned int	*map;
+	char nb_tetri;
+	int i;
+	char map_min_size;
+	unsigned int *map;
+	unsigned short *tab_tetri;
 
-	nb_tetri = 0;
-	i = 0;
-	tab_tetri = NULL;
 	map = NULL;
+	tab_tetri = NULL;
 	if (argc != 2)
 		write(1, "error\n", 6);
 	else
@@ -33,11 +30,10 @@ int		main(int argc, char **argv)
 			write(1, "error\n", 6);
 		else
 		{
-			printf("> Number of tetriminos: %d\n", nb_tetri);
+			i = 0;
 			map_min_size = ft_mapminsize(nb_tetri);
-			printf("Map min size %d\n", map_min_size);
 			tab_tetri = ft_stock_tetri(nb_tetri, argv[1]);
-			map = ft_mapsize();
+			map = ft_mapgenerator();
 			map[0] = 0b00000000000000000000000000000000;
 			map[1] = 0b00000000000000000000000000000000;
 			map[2] = 0b00000000000000000000000000000000;
