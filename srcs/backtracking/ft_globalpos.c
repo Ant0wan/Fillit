@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/13 14:06:41 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/13 14:28:12 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/13 15:14:29 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,13 @@ char	ft_globalpos(unsigned int *map, unsigned short *tab_tetri,
 
 	i = -1;
 	while (++i < nb_tetri)
-		res = ft_position_y(map, tab_tetri[i], map_nb, 0);
+		if ((res = ft_position_y(map, tab_tetri[i], map_nb, 0)))
+			break;
 	if (res)
+	{
+		printf("cannot place all\n");
 		return (1);
+	}
 	else
 		return (0);
 }
