@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/11 17:10:51 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/13 13:33:03 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/13 14:33:46 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,12 @@ char	ft_position_y(unsigned int *map, unsigned short tetriminos,
 	}
 	else if (res && l >= map_nb - height)
 	{
-		printf("2res: %d\n", res);
+		printf("placement y failed: %d\n", res);
 		return (1);
 	}
 	else
+	{
+		printf("placement y succeed: %d\n", res);
 		return (0);
+	}
 }
