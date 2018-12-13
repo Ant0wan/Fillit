@@ -6,16 +6,16 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 15:21:47 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/30 16:09:11 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/13 13:28:28 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-static int		ft_count_hlinks(unsigned short tetriminos)
+static char		ft_count_hlinks(unsigned short tetriminos)
 {
-	int		links_nb;
-	int		i;
+	char	links_nb;
+	char	i;
 
 	links_nb = 0;
 	i = 0;
@@ -27,10 +27,10 @@ static int		ft_count_hlinks(unsigned short tetriminos)
 	return (links_nb);
 }
 
-static int		ft_count_vlinks(unsigned short tetriminos)
+static char		ft_count_vlinks(unsigned short tetriminos)
 {
-	int				links_nb;
-	int				i;
+	char			links_nb;
+	char			i;
 	unsigned short	a;
 	unsigned short	b;
 	unsigned short	c;
@@ -50,9 +50,9 @@ static int		ft_count_vlinks(unsigned short tetriminos)
 	return (links_nb);
 }
 
-int				ft_is_tetri_valid(unsigned short tetriminos)
+char			ft_is_tetri_valid(unsigned short tetriminos)
 {
-	int	links_nb;
+	char	links_nb;
 
 	links_nb = ft_count_vlinks(tetriminos) + ft_count_hlinks(tetriminos);
 	if (links_nb == 3 || links_nb == 4)

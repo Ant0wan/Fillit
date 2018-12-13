@@ -6,17 +6,17 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 15:21:47 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/30 16:08:08 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/13 13:25:48 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		ft_format_test(int fd)
+char	ft_format_test(int fd)
 {
 	int		ret;
 	int		i;
-	int		hash_nb;
+	char	hash_nb;
 	char	buffer[BUFF_SIZE];
 
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 14:56:46 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/13 13:22:34 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/13 13:26:48 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ unsigned short	*ft_stock_tetri(int nb, char *av);
 
 unsigned int	*ft_mapgenerator(void);
 
-int				ft_format_test(int fd);
+char			ft_format_test(int fd);
 
-int				ft_is_tetri_valid(unsigned short tetriminos);
+char			ft_is_tetri_valid(unsigned short tetriminos);
 
 int				issamplevalid(char *argv);
 

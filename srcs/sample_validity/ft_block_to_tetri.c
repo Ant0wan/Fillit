@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/29 15:32:39 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/30 16:07:14 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/13 13:24:46 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 unsigned short	ft_block_to_tetri(char *str)
 {
-	int				u;
-	int				i;
+	char			u;
+	char			i;
 	unsigned short	tetriminos;
 
 	i = 0;
