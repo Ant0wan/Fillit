@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mapsize.c                                       :+:      :+:    :+:   */
+/*   ft_mapgenerator.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/03 15:24:10 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/10 11:45:38 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/13 13:22:10 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-unsigned int	*ft_mapsize(void)
+unsigned int	*ft_mapgenerator(void)
 {
-	unsigned int	*mapsize;
+	unsigned int	*map;
 
-	if (!(mapsize = (unsigned int*)ft_memalloc(sizeof(unsigned int) * ROW_NB)))
+	if (!(map = (unsigned int*)ft_memalloc(sizeof(unsigned int) * ROW_NB)))
 		return (NULL);
-	return (mapsize);
+	return (map);
 }
