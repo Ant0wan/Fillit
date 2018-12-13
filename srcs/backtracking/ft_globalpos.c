@@ -1,33 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   backtracking.c                                     :+:      :+:    :+:   */
+/*   ft_globalpos.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/30 17:21:00 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/13 14:12:37 by abarthel         ###   ########.fr       */
+/*   Created: 2018/12/13 14:06:41 by abarthel          #+#    #+#             */
+/*   Updated: 2018/12/13 14:13:19 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
-
-char	backtracking(char nb_tetri, char *av)
+char	ft_globalpos(unsigned int *map, unsigned short *tab_tetri, char map_nb)
 {
-	int				i;
-	char			map_nb;
-	unsigned int	*map;
-	unsigned short	*tab_tetri;
-
-	i = 0;
-	map_nb = ft_mapminsize(nb_tetri);
-	tab_tetri = ft_stock_tetri(nb_tetri, av);
-	map = ft_mapgenerator();
-	while (!(ft_globalpos(map, tab_tetri, map_nb)))
-		++map_nb;
-	ft_printmap(map, map_nb);
-	write(1, "\n", 1);
-	free(map);
-	free(tab_tetri);
-	return (0);
+	if (1)
+		return (1);
+	else
+		return (0);
 }
