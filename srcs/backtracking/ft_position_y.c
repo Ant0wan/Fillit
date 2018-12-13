@@ -6,14 +6,14 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/11 17:10:51 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/13 10:55:26 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/13 13:33:03 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
 char	ft_position_y(unsigned int *map, unsigned short tetriminos,
-		int map_nb, int l)
+		char map_nb, int l)
 {
 	char	res;
 	char	height;

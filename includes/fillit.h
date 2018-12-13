@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 14:56:46 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/13 13:26:48 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/13 13:31:37 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ enum	e_masks
 
 unsigned short	ft_block_to_tetri(char *str);
 
-unsigned short	*ft_stock_tetri(int nb, char *av);
+unsigned short	*ft_stock_tetri(char nb, char *av);
 
 unsigned int	*ft_mapgenerator(void);
 
@@ -58,7 +58,7 @@ char			ft_format_test(int fd);
 
 char			ft_is_tetri_valid(unsigned short tetriminos);
 
-int				issamplevalid(char *argv);
+char			issamplevalid(char *argv);
 
 char			ft_mapminsize(char nb_tetri);
 
@@ -71,10 +71,10 @@ void			ft_bzero(void *s, size_t n);
 void			*ft_memalloc(size_t size);
 
 char			ft_position_x(unsigned int *map, unsigned short tetriminos,
-		int map_nb, int l);
+		char map_nb, int l);
 
 char			ft_position_y(unsigned int *map, unsigned short tetriminos,
-		int map_nb, int l);
+		char map_nb, int l);
 
 char			ft_thickness(unsigned short tetriminos);
 

@@ -6,16 +6,16 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 14:29:58 by abarthel          #+#    #+#             */
-/*   Updated: 2018/11/30 17:41:04 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/13 13:30:00 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int			issamplevalid(char *argv)
+char		issamplevalid(char *argv)
 {
 	int		fd;
-	int		nb_tetriminos;
+	char	nb_tetriminos;
 	char	buf[BLOCK_SIZE];
 
 	nb_tetriminos = 0;
