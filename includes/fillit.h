@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 14:56:46 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/13 13:45:23 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/13 14:13:50 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,8 @@ char			ft_thickness(unsigned short tetriminos);
 char			ft_height(unsigned short tetriminos);
 
 char			backtracking(char nb_tetri, char *av);
+
+char			ft_globalpos(unsigned int *map, unsigned short *tab_tetri,
+		char map_nb);
 
 #endif
