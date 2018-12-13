@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 17:21:00 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/12 16:06:04 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/13 11:48:33 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int		main(int argc, char **argv)
 {
 	(void)argv;
-	int		nb_tetri;
-	int		map_min_size;
+	char	nb_tetri;
+	char	map_min_size;
 	int 	i;
 	unsigned short	*tab_tetri;
 	unsigned int	*map;
@@ -43,7 +43,7 @@ int		main(int argc, char **argv)
 			map[2] = 0b00000000000000000000000000000000;
 			map[3] = 0b00000000000000000000000000000000;
 			write(1, "\n>      MAP     <\n\t", 19); // DEBUGG
-			while (i < nb_tetri)
+			while (i < 1) // nb_tetri
 			{
 				printf("position : %d\n", ft_position_y(map, tab_tetri[i], map_min_size, 0));
 				++i;
