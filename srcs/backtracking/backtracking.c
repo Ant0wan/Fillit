@@ -6,13 +6,13 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 17:21:00 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/14 12:23:01 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/14 12:28:23 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-char	ft_globalpos(unsigned int *map, unsigned short *tab_tetri,
+static char	ft_globalpos(unsigned int *map, unsigned short *tab_tetri,
 		char map_nb, char nb_tetri)
 {
 	static int		i = -1;
@@ -35,7 +35,7 @@ char	ft_globalpos(unsigned int *map, unsigned short *tab_tetri,
 		return (1);
 }
 
-char	backtracking(char nb_tetri, char *av)
+char		backtracking(char nb_tetri, char *av)
 {
 	int				i;
 	char			map_nb;
