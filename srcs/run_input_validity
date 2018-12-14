@@ -6,7 +6,7 @@
 #    By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/29 16:13:56 by abarthel          #+#    #+#              #
-#    Updated: 2018/12/13 15:25:13 by abarthel         ###   ########.fr        #
+#    Updated: 2018/12/14 12:09:33 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,4 +33,4 @@ echo "====> INV2 OUTPUT <======="
 echo "====> INV3 OUTPUT <======="
 ./fillit ../test_samples/inv3.fillit
 #time ./fillit ./test_samples/inv3.fillit
-rm -f fillit
+#rm -f fillit
