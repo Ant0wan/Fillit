@@ -6,12 +6,11 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/17 10:58:23 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/17 13:42:44 by aquan            ###   ########.fr       */
+/*   Updated: 2018/12/17 14:02:58 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-//#include "fillit.h"
+#include "fillit.h"
 
 char	ft_format_test(char *buf)
 {
@@ -22,7 +21,7 @@ char	ft_format_test(char *buf)
 	i = 0;
 	hash_nb = 0;
 	backslash = 0;
-	while (*buf && ++i < 21)
+	while (*(++buf) && ++i < 21)
 	{
 		if (i % 5 != 0 && !(*buf == '#' || *buf == '.'))
 			return (0);
@@ -35,7 +34,6 @@ char	ft_format_test(char *buf)
 			else
 				return (0);
 		}
-		++buf;
 	}
 	if (hash_nb != 4 || backslash != 4)
 		return (0);
@@ -50,25 +48,23 @@ char	ft_test(char *buf)
 	res = 0;
 	while (*buf)
 	{
-		if (ft_format_test(buf))
+		if (ft_format_test((buf - 1)))
+		{
 			buf = buf + 20;
+		}
 		else
 			return (1);
 		if (!(*buf))
 			return (0);
 		else if (*buf == '\n')
-			++buf;
+		{
+			if (!(*(buf + 1)))
+				return (1);
+			else
+				++buf;
+		}
 		else
 			return (1);
 	}
-	return (0);
-}
-
-int main	(void)
-{
-	char *buf;
-
-	buf = "....\n....\n....\n####\n\n...#\n...#\n...#\n...#\n";
-	printf("%d", ft_test(buf));
 	return (0);
 }
