@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/29 15:32:39 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/17 15:27:01 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/17 15:30:39 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,6 @@ unsigned int		*ft_block_to_tetri(char *str)
 	tetri[0] = assign_tetri(str);
 	tetri[1] = assign_tetri((str + 5));
 	tetri[2] = assign_tetri((str + 10));
-	tetri[3] = assign_tetri((str + 5));
+	tetri[3] = assign_tetri((str + 15));
 	return (tetri);
 }

@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 14:29:58 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/17 14:32:23 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/17 15:39:46 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,38 +41,42 @@ static char	ft_block_test(char *buf)
 		return (1);
 }
 
-static char	ft_format_test(char *buf)
+static char	ft_nbtetri(char *buf)
 {
+	char	nb_tetri;
+
+	nb_tetri = 0;
 	while (*buf)
 	{
 		if (ft_block_test((buf - 1)))
 		{
+			++nb_tetri;
 			buf = buf + 20;
 		}
 		else
-			return (1);
-		if (!(*buf))
 			return (0);
+		if (!(*buf))
+			return (nb_tetri);
 		else if (*buf == '\n')
 		{
 			if (!(*(buf + 1)))
-				return (1);
+				return (0);
 			else
 				++buf;
 		}
 		else
-			return (1);
+			return (0);
 	}
-	return (0);
+	return (nb_tetri);
 }
 
 char		issamplevalid(char *argv)
 {
 	int		fd;
-	char	nb_tetriminos;
+	char	nb_tetri;
 	char	buf[BUFF_SIZE];
 
-	nb_tetriminos = 0;
+	nb_tetri = 0;
 	if ((fd = open(argv, O_RDONLY)) == -1)
 	{
 		write(1, "open failed\n", 12);
@@ -84,26 +88,15 @@ char		issamplevalid(char *argv)
 		close(fd);
 		return (-1);
 	}
-	if (ft_format_test(buf))
+	if (!(nb_tetri = ft_nbtetri(buf)))
 	{
 		write(1, "test failed\n", 12);
 		close (fd);
 		return (-1);
 	}
+	printf("nb tetri: %d\n", nb_tetri);
+//	rempli le tableau
+//	check tetrimonos valid
+	
 	return (0);
 }
-
-//	if ()
-//
-//
-//		// STILL START HERE
-//	else if ((close(fd)) == -1)
-//		return (-1);
-//	if ((ft_is_tetri_valid(ft_block_to_tetri(buf))) == -1)
-//	{
-//		close(fd);
-//		return (-1);
-//	}
-//	++nb_tetriminos;
-//	return (nb_tetriminos);
-//}
