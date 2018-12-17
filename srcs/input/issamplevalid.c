@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 14:29:58 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/17 14:08:53 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/17 14:32:23 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,28 +74,36 @@ char		issamplevalid(char *argv)
 
 	nb_tetriminos = 0;
 	if ((fd = open(argv, O_RDONLY)) == -1)
+	{
+		write(1, "open failed\n", 12);
 		return (-1);
+	}
 	if ((read(fd, buf, BUFF_SIZE)) <= 0)
 	{
+		write(1, "read failed\n", 12);
 		close(fd);
 		return (-1);
 	}
-	if ((ft_format_test(buf)) == -1)
+	if (ft_format_test(buf))
 	{
+		write(1, "test failed\n", 12);
 		close (fd);
 		return (-1);
 	}
-	if ()
-
-
-		// STILL START HERE
-	else if ((close(fd)) == -1)
-		return (-1);
-	if ((ft_is_tetri_valid(ft_block_to_tetri(buf))) == -1)
-	{
-		close(fd);
-		return (-1);
-	}
-	++nb_tetriminos;
-	return (nb_tetriminos);
+	return (0);
 }
+
+//	if ()
+//
+//
+//		// STILL START HERE
+//	else if ((close(fd)) == -1)
+//		return (-1);
+//	if ((ft_is_tetri_valid(ft_block_to_tetri(buf))) == -1)
+//	{
+//		close(fd);
+//		return (-1);
+//	}
+//	++nb_tetriminos;
+//	return (nb_tetriminos);
+//}
