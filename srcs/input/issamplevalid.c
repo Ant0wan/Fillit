@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 14:29:58 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/17 18:52:35 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/17 18:59:41 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ char		issamplevalid(char *argv)
 		printf("maillon 3: %d\n", tab[2].tetri[0]);
 		return (0);
 	}
-//	check tetrimonos valid
-//	rempli le tableau
+	//	check tetrimonos valid
+	//	rempli le tableau
 	return (1);
 }
