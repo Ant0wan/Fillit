@@ -6,13 +6,11 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/17 10:58:23 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/17 11:35:51 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/17 13:05:03 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-
+#include "fillit.h"
 
 char	ft_format_test(char *buf)
 {
@@ -25,7 +23,6 @@ char	ft_format_test(char *buf)
 	backslash = 0;
 	while (*buf && ++i < 21)
 	{
-		printf("%c\n", *buf);
 		if (i % 5 != 0 && !(*buf == '#' || *buf == '.'))
 			return (0);
 		else if (*buf == '#')
@@ -54,23 +51,16 @@ char	ft_test(char *buf)
 	res = 0;
 	while (*buf)
 	{
-		if ((res = ft_format_test(buf)))
-		{
-			buf = buf + 21;
-			printf("res %d\n", (int)res);
-		}
+		if (ft_format_test(buf))
+			buf = buf + 20;
 		else
 			return (1);
-		if (*buf == '\n' && !(*(buf + 1)))
+		if (!(*buf))
+			return (0);
+		else if (*buf == '\n')
+			++buf;
+		else
 			return (1);
-		printf("%c\n", *buf);
 	}
 	return (0);
-}
-
-int main()
-{
-	printf("resultat ok0 ko1  : %d\n", ft_test("....\n....\n####\n....\n\n"));
-
-	return 0;
 }
