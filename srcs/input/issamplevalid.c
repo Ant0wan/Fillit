@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 14:29:58 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/17 15:39:46 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/17 15:46:02 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,20 +78,10 @@ char		issamplevalid(char *argv)
 
 	nb_tetri = 0;
 	if ((fd = open(argv, O_RDONLY)) == -1)
-	{
-		write(1, "open failed\n", 12);
 		return (-1);
-	}
-	if ((read(fd, buf, BUFF_SIZE)) <= 0)
+	if ((read(fd, buf, BUFF_SIZE)) <= 0 || !(nb_tetri = ft_nbtetri(buf)))
 	{
-		write(1, "read failed\n", 12);
 		close(fd);
-		return (-1);
-	}
-	if (!(nb_tetri = ft_nbtetri(buf)))
-	{
-		write(1, "test failed\n", 12);
-		close (fd);
 		return (-1);
 	}
 	printf("nb tetri: %d\n", nb_tetri);
