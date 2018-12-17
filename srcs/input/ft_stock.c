@@ -6,7 +6,7 @@
 /*   By: aquan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/17 14:44:34 by aquan             #+#    #+#             */
-/*   Updated: 2018/12/17 18:51:27 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/17 19:01:45 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,37 @@ static void	ft_pushright(unsigned int *tetri)
 	}
 }
 
+static char	ft_height(unsigned short tetriminos)
+{
+	if (tetriminos & ~(part3_m))
+		return (4);
+	else if ((tetriminos & ~(part2_m)) >> 4)
+		return (3);
+	else if ((tetriminos & ~(part1_m)) >> 8)
+		return (2);
+	else
+		return (1);
+}
+
+static char		ft_width(unsigned short tetriminos)
+{
+	char	d;
+
+	d = -1;
+	while (++d < 3)
+	{
+		if (((tetriminos & ~(part0_m)) >> 12) & (v_mask << d))
+			return (4 - d);
+		else if (((tetriminos & ~(part1_m)) >> 8) & (v_mask << d))
+			return (4 - d);
+		else if (((tetriminos & ~(part2_m)) >> 4) & (v_mask << d))
+			return (4 - d);
+		else if ((tetriminos & ~(part3_m)) & (v_mask << d))
+			return (4 - d);
+	}
+	return (1);
+}
+
 t_lst	*ft_stock(char *buf, char nb_tetri)
 {
 	char	i;
@@ -79,10 +110,10 @@ t_lst	*ft_stock(char *buf, char nb_tetri)
 			free(tab);
 			return (NULL);
 		}
-		//		tab[i].width = 0; // to change
-		//		tab[i].height = 0; // to change
-		//		tab[i].x = 32 - width;
-		//		tab[i].y = 0;
+		tab[i].width = ft_width(tab[i].tetri); // to change
+		tab[i].height = ft_height(tab[i].tetri); // to change
+		tab[i].x = 32 - tab[i].width;
+		tab[i].y = 0;
 		++i;
 		buf += 21;
 	}
