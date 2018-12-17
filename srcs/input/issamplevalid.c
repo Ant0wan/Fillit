@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 14:29:58 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/17 17:45:16 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/17 18:52:35 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,18 +80,27 @@ char		issamplevalid(char *argv)
 	nb_tetri = 0;
 	if ((fd = open(argv, O_RDONLY)) == -1)
 		return (-1);
-	if ((read(fd, buf, BUFF_SIZE)) <= 0 || !(nb_tetri = ft_nbtetri(buf)))
+	if ((read(fd, buf, BUFF_SIZE)) <= 0)
+	{
+		close(fd);
+		return (-1);
+	}
+	nb_tetri = ft_nbtetri(buf);
+	if (!(nb_tetri))
 	{
 		close(fd);
 		return (-1);
 	}
 	printf("nb tetri: %d\n", nb_tetri);
 	tab = ft_stock(buf, nb_tetri);
-	printf("maillon 1: %d\n", tab[0].tetri[0]);
-	printf("maillon 2: %d\n", tab[1].tetri[0]);
-	printf("maillon 3: %d\n", tab[2].tetri[0]);
+	if (tab)
+	{
+		printf("maillon 1: %d\n", tab[0].tetri[0]);
+		printf("maillon 2: %d\n", tab[1].tetri[0]);
+		printf("maillon 3: %d\n", tab[2].tetri[0]);
+		return (0);
+	}
 //	check tetrimonos valid
 //	rempli le tableau
-	
-	return (0);
+	return (1);
 }
