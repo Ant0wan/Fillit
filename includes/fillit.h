@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 14:56:46 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/17 14:37:45 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/17 15:57:19 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,14 @@
 
 #define BUFF_SIZE 650
 
-typedef struct s_lst
+typedef struct	s_lst
 {
 	unsigned int	tetri[4];
-	char		width;
-	char		height;
-	char		x;
-	char		y;
-}		t_lst;
+	char			width;
+	char			height;
+	char			x;
+	char			y;
+}				t_lst;
 
 char	issamplevalid(char *av);
 
