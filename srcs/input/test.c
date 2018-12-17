@@ -6,11 +6,12 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/17 10:58:23 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/17 13:05:03 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/17 13:42:44 by aquan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include <stdio.h>
+//#include "fillit.h"
 
 char	ft_format_test(char *buf)
 {
@@ -36,9 +37,7 @@ char	ft_format_test(char *buf)
 		}
 		++buf;
 	}
-	if (hash_nb != 4)
-		return (0);
-	if (backslash != 4)
+	if (hash_nb != 4 || backslash != 4)
 		return (0);
 	else
 		return (1);
@@ -62,5 +61,14 @@ char	ft_test(char *buf)
 		else
 			return (1);
 	}
+	return (0);
+}
+
+int main	(void)
+{
+	char *buf;
+
+	buf = "....\n....\n....\n####\n\n...#\n...#\n...#\n...#\n";
+	printf("%d", ft_test(buf));
 	return (0);
 }
