@@ -6,7 +6,7 @@
 /*   By: aquan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/17 14:44:34 by aquan             #+#    #+#             */
-/*   Updated: 2018/12/17 17:45:41 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/17 17:57:16 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,16 @@ t_lst	*ft_stock(char *buf, char nb_tetri)
 	while (i < nb_tetri)
 	{
 		tab[i].tetri[0] = assign_tetri(buf);
-		printf("tetri: %d\n", tab[i].tetri[0]);
 		tab[i].tetri[1] = assign_tetri((buf + 5)); 
 		tab[i].tetri[2] = assign_tetri((buf + 10));
 		tab[i].tetri[3] = assign_tetri((buf + 15));
+		if (ft_is_tetri_valid(tab[i].tetri))
+			printf("OK");
+		else
+		{
+			free(tab);
+			return (NULL);
+		}
 //		tab[i].width = 0; // to change
 //		tab[i].height = 0; // to change
 //		tab[i].x = 32 - width;

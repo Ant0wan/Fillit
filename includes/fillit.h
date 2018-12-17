@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 14:56:46 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/17 17:32:00 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/17 17:55:16 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,7 @@ void	ft_bzero(void *s, size_t n);
 void	*ft_memalloc(size_t size);
 
 t_lst	*ft_stock(char *buf, char nb_tetri);
+
+char	ft_is_tetri_valid(unsigned int *tetri);
 
 #endif
