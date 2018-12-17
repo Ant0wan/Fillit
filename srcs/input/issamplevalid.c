@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 14:29:58 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/17 15:46:02 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/17 17:24:45 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ char		issamplevalid(char *argv)
 	int		fd;
 	char	nb_tetri;
 	char	buf[BUFF_SIZE];
+	t_lst	*tab;
 
 	nb_tetri = 0;
 	if ((fd = open(argv, O_RDONLY)) == -1)
@@ -85,8 +86,9 @@ char		issamplevalid(char *argv)
 		return (-1);
 	}
 	printf("nb tetri: %d\n", nb_tetri);
-//	rempli le tableau
+	tab = ft_stock(buf, nb_tetri);
 //	check tetrimonos valid
+//	rempli le tableau
 	
 	return (0);
 }

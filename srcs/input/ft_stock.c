@@ -6,7 +6,7 @@
 /*   By: aquan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/17 14:44:34 by aquan             #+#    #+#             */
-/*   Updated: 2018/12/17 16:27:03 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/17 17:35:53 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,25 +37,27 @@ static unsigned int	assign_tetri(char *s)
 	return (shape);
 }
 
-t_lst	ft_stock(char *buf, char nb_tetri)
+t_lst	*ft_stock(char *buf, char nb_tetri)
 {
 	char	i;
 	t_lst	*tab;
 
-	if (!(tab = (t_lst*)ft_memalloc(sizeof(*tab) * nb_tetri)))
+	if (!(tab = (t_lst*)ft_memalloc(sizeof(t_lst) * nb_tetri)))
 		return (NULL);
 	i = 0;
 	while (i < nb_tetri)
 	{
-		(*tab)->tetri[0] = assign_tetri(buf)
-		(*tab)->tetri[1] = assign_tetri((buf + 5)); 
-		(*tab)->tetri[2] = assign_tetri((buf + 10));
-		(*tab)->tetri[3] = assign_tetri((buf + 15));
-		(*tab)->width = 0; // to change
-		(*tab)->height = 0; // to change
-		(*tab)->x = 32 - width;
-		(*tab)->y = 0;
+		tab->tetri[0] = assign_tetri(buf);
+		tab->tetri[1] = assign_tetri((buf + 5)); 
+		tab->tetri[2] = assign_tetri((buf + 10));
+		tab->tetri[3] = assign_tetri((buf + 15));
+//		tab->width = 0; // to change
+//		tab->height = 0; // to change
+//		tab->x = 32 - width;
+//		tab->y = 0;
+		++tab;
 		++i;
+		buf += 21;
 	}
 	return (tab);
 }
