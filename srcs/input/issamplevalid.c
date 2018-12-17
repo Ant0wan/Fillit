@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 14:29:58 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/17 18:59:41 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/17 19:35:38 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,13 +80,7 @@ char		issamplevalid(char *argv)
 	nb_tetri = 0;
 	if ((fd = open(argv, O_RDONLY)) == -1)
 		return (-1);
-	if ((read(fd, buf, BUFF_SIZE)) <= 0)
-	{
-		close(fd);
-		return (-1);
-	}
-	nb_tetri = ft_nbtetri(buf);
-	if (!(nb_tetri))
+	if ((read(fd, buf, BUFF_SIZE)) <= 0 || !(nb_tetri = ft_nbtetri(buf)))
 	{
 		close(fd);
 		return (-1);
@@ -100,7 +94,5 @@ char		issamplevalid(char *argv)
 		printf("maillon 3: %d\n", tab[2].tetri[0]);
 		return (0);
 	}
-	//	check tetrimonos valid
-	//	rempli le tableau
 	return (1);
 }
