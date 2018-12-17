@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 14:29:58 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/13 13:30:00 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/17 10:48:49 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,62 +63,62 @@ int main()
 }
 
 
-char	ft_format_test(int fd)
-{
-	int		ret;
-	int		i;
-	char	hash_nb;
-	char	buffer[BUFF_SIZE];
-
-	i = 0;
-	hash_nb = 0;
-	while ((ret = (int)read(fd, buffer, BUFF_SIZE)) > 0 && i < 21)
-	{
-		if (*buffer == '#')
-			++hash_nb;
-		if (hash_nb > 4)
-			return (-1);
-		if ((i == 20 || (i + 1) % 5 == 0) && *buffer != '\n')
-			return (-1);
-		else if (i != 20 && ((i + 1) % 5 != 0 && !(*buffer == '#'
-						|| *buffer == '.')))
-			return (-1);
-		hash_nb = (i + 1) % 21 ? hash_nb : 0;
-		i = (i + 1) % 21;
-	}
-	return (1);
-}
-
-char		issamplevalid(char *argv)
-{
-	int		fd;
-	char	nb_tetriminos;
-	char	buf[BUFF_SIZE];
-
-	nb_tetriminos = 0;
-	if ((fd = open(argv, O_RDONLY)) == -1)
-		return (-1);
-	if ((read(fd, buf, BUFF_SIZE)) <= 0)
-	{
-		close(fd);
-		return (-1);
-	}
-	if ((ft_format_test(buf)) == -1)
-	{
-		close (fd);
-		return (-1);
-	}
-	if ()
-
-
-// STILL START HERE
-	else if ((close(fd)) == -1)
-		return (-1);
-	if ((ft_is_tetri_valid(ft_block_to_tetri(buf))) == -1)
-	{
-		close(fd);
-		return (-1);
-	}
-	++nb_tetriminos;
-	return (nb_tetriminos);
-}
+//char	ft_format_test(int fd)
+//{
+//	int		ret;
+//	int		i;
+//	char	hash_nb;
+//	char	buffer[BUFF_SIZE];
+//
+//	i = 0;
+//	hash_nb = 0;
+//	while ((ret = (int)read(fd, buffer, BUFF_SIZE)) > 0 && i < 21)
+//	{
+//		if (*buffer == '#')
+//			++hash_nb;
+//		if (hash_nb > 4)
+//			return (-1);
+//		if ((i == 20 || (i + 1) % 5 == 0) && *buffer != '\n')
+//			return (-1);
+//		else if (i != 20 && ((i + 1) % 5 != 0 && !(*buffer == '#'
+//						|| *buffer == '.')))
+//			return (-1);
+//		hash_nb = (i + 1) % 21 ? hash_nb : 0;
+//		i = (i + 1) % 21;
+//	}
+//	return (1);
+//}
+//
+//char		issamplevalid(char *argv)
+//{
+//	int		fd;
+//	char	nb_tetriminos;
+//	char	buf[BUFF_SIZE];
+//
+//	nb_tetriminos = 0;
+//	if ((fd = open(argv, O_RDONLY)) == -1)
+//		return (-1);
+//	if ((read(fd, buf, BUFF_SIZE)) <= 0)
+//	{
+//		close(fd);
+//		return (-1);
+//	}
+//	if ((ft_format_test(buf)) == -1)
+//	{
+//		close (fd);
+//		return (-1);
+//	}
+//	if ()
+//
+//
+//// STILL START HERE
+//	else if ((close(fd)) == -1)
+//		return (-1);
+//	if ((ft_is_tetri_valid(ft_block_to_tetri(buf))) == -1)
+//	{
+//		close(fd);
+//		return (-1);
+//	}
+//	++nb_tetriminos;
+//	return (nb_tetriminos);
+//}
