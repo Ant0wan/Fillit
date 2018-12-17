@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 14:29:58 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/17 19:38:06 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/17 19:45:53 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,9 +84,10 @@ char		issamplevalid(char *argv)
 	{
 		close(fd);
 		return (0);
-	}
+	} // a voir car envoi a backtracking(nb tetri et tab)
+	close(fd);
 	tab = ft_stock(buf, nb_tetri);
 	if (tab)
 		return (0);
-	return (1);
+	return (nb_tetri);
 }
