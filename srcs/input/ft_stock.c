@@ -6,7 +6,7 @@
 /*   By: aquan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/17 14:44:34 by aquan             #+#    #+#             */
-/*   Updated: 2018/12/17 16:00:12 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/17 16:25:34 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ t_lst	ft_stock(char *buf, char nb_tetri)
 		(*tab)->tetri[1] = assign_tetri((buf + 5)); 
 		(*tab)->tetri[2] = assign_tetri((buf + 10));
 		(*tab)->tetri[3] = assign_tetri((buf + 15));
-		(*tab)->width = ;
-		(*tab)->height = ;
+		(*tab)->width = 0; // to change
+		(*tab)->height = 0; // to change
 		(*tab)->x = 32 - width;
 		(*tab)->y = 0;
 		++i;
