@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 14:56:46 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/18 13:53:54 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/18 15:49:43 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,13 @@ void			ft_bzero(void *s, size_t n);
 
 void			backtracking(t_lst **tab, unsigned char nb_tetri);
 
+void			ft_placerm(unsigned int *map, unsigned int *tetri, char x);
+
 unsigned char	issamplevalid(t_lst **tab, char *av);
 
 char			ft_is_tetri_valid(unsigned int *tetri);
+
+char			ft_position_y(t_lst **tab, unsigned int *map, unsigned char n);
 
 void			*ft_memalloc(size_t size);
 
