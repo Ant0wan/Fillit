@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 17:21:00 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/18 14:06:32 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/18 15:45:51 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,19 +37,36 @@ static char			ft_mapminsize(unsigned char nb_tetri)
 	return (i);
 }
 
-//static char			tetri_feeder(t_lst **tab, unsigned char nb_tetri)
-//{
-//	if (ft_position_y)
-//	{
-//		if (!(tetri--))
-//			return (erreur);
-//		tetri--;
-//		ft_remove(tetri);
-//		tetri->x = x--;
-//		return (tetri_feeder(tab, nb_tetri));
-//	}
-//	return (all done !);
-//}
+static char			tetri_feeder(t_lst **tab, unsigned int *map,
+		unsigned char nb_tetri, char map_nb)
+{
+	static int	n = 0;
+
+	if (ft_position_y(tab, map, n))
+	{
+		--n;
+		if (n == -1)
+			return (1);
+		else
+		{
+			ft_placerm(map, tab[(int)n]->tetri, tab[(int)n]->x);
+			if (tab[(int)n]->x > 0)
+			{
+				tab[(int)n]->x -= 1;
+				return (tetri_feeder(tab, map, nb_tetri, map_nb));
+			}
+			else if (tab[(int)n]->y > 31 - tab[(int)n]->height)
+			{
+				tab[(int)n]->y += 1;
+				tab[(int)n]->x = 32 - tab[(int)n]->width;
+				return (tetri_feeder(tab, map, nb_tetri, map_nb));
+			}
+			else
+				return (1);
+		}
+	}
+	return (1);
+}
 
 void				backtracking(t_lst **tab, unsigned char nb_tetri)
 {
@@ -58,15 +75,9 @@ void				backtracking(t_lst **tab, unsigned char nb_tetri)
 
 	map = ft_mapgenerator();
 	map_nb = ft_mapminsize(nb_tetri);
-	
+	while (tetri_feeder(tab, map, nb_tetri, map_nb) && map_nb < ROW_NB + 1)
+		++map_nb;
+	printf("map final size: %d\n", (int)map_nb);
 	free(map);
 	free(*tab);
 }
-
-//static char	map_define();
-
-//static char	tetri_feeder();
-
-
-
-

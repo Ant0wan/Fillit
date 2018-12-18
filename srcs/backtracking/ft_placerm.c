@@ -6,13 +6,13 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/11 17:10:51 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/17 10:34:39 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/18 15:04:34 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-void	ft_placerm(unsigned int *map, unsigned int *tetri, int x)
+void	ft_placerm(unsigned int *map, unsigned int *tetri, char x)
 {
 	map[0] ^= tetri[0] << x;
 	map[1] ^= tetri[1] << x;
