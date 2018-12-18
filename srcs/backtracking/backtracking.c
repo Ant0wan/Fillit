@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 17:21:00 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/18 15:57:34 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/18 16:21:37 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,10 @@ static char			tetri_feeder(t_lst **tab, unsigned int *map,
 {
 	static int	n = 0;
 
-	if (ft_position_y(tab, map, n))
+	printf("n: %d\n", n);
+	if (n < nb_tetri && ft_position_y(tab, map, n))
 	{
-		write(1, "K", 1);
+		write(1, "Y", 1);
 		--n;
 		if (n == -1)
 			return (1);
@@ -68,6 +69,7 @@ static char			tetri_feeder(t_lst **tab, unsigned int *map,
 	}
 	else if (n < nb_tetri)
 	{
+//		write(1, "NEXT\n", 5);
 		++n;
 		return (tetri_feeder(tab, map, nb_tetri, map_nb));
 	}
