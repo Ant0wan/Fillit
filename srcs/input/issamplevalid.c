@@ -6,13 +6,13 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 14:29:58 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/18 11:36:28 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/18 11:43:07 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-static char	ft_block_test(char *buf)
+static char				ft_block_test(char *buf)
 {
 	int		i;
 	char	hash_nb;
@@ -41,9 +41,9 @@ static char	ft_block_test(char *buf)
 		return (1);
 }
 
-static char	ft_nbtetri(char *buf)
+static unsigned char	ft_nbtetri(char *buf)
 {
-	char	nb_tetri;
+	unsigned char	nb_tetri;
 
 	nb_tetri = 0;
 	while (*buf)
@@ -70,12 +70,12 @@ static char	ft_nbtetri(char *buf)
 	return (nb_tetri);
 }
 
-char		issamplevalid(char *argv)
+char					issamplevalid(char *argv)
 {
-	int		fd;
-	char	nb_tetri;
-	char	*buf;
-	t_lst	*tab;
+	t_lst			*tab;
+	int				fd;
+	unsigned char	nb_tetri;
+	char			*buf;
 
 	nb_tetri = 0;
 	if ((fd = open(argv, O_RDONLY)) == -1)
