@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 17:21:00 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/18 16:21:37 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/18 17:03:22 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,25 +42,27 @@ static char			tetri_feeder(t_lst **tab, unsigned int *map,
 {
 	static int	n = 0;
 
-	printf("n: %d\n", n);
 	if (n < nb_tetri && ft_position_y(tab, map, n))
 	{
-		write(1, "Y", 1);
-		--n;
+//		write(1, "O", 1);
+		(*tab)[(int)n].x = 32 - (*tab)[(int)n].width;
+		(*tab)[(int)n].y = 0;
+		n = n - 1;
+		printf("n: %d\n", n);
 		if (n == -1)
 			return (1);
 		else
 		{
-			ft_placerm(map, tab[(int)n]->tetri, tab[(int)n]->x);
-			if (tab[(int)n]->x > 0)
+			ft_placerm(map, (*tab)[(int)n].tetri, (*tab)[(int)n].x);
+			if ((*tab)[(int)n].x > 0)
 			{
-				tab[(int)n]->x -= 1;
+				(*tab)[(int)n].x -= 1;
 				return (tetri_feeder(tab, map, nb_tetri, map_nb));
 			}
-			else if (tab[(int)n]->y > 31 - tab[(int)n]->height)
+			else if ((*tab)[(int)n].y > 31 - (*tab)[(int)n].height)
 			{
-				tab[(int)n]->y += 1;
-				tab[(int)n]->x = 32 - tab[(int)n]->width;
+				(*tab)[(int)n].y += 1;
+				(*tab)[(int)n].x = 32 - (*tab)[(int)n].width;
 				return (tetri_feeder(tab, map, nb_tetri, map_nb));
 			}
 			else
@@ -69,7 +71,6 @@ static char			tetri_feeder(t_lst **tab, unsigned int *map,
 	}
 	else if (n < nb_tetri)
 	{
-//		write(1, "NEXT\n", 5);
 		++n;
 		return (tetri_feeder(tab, map, nb_tetri, map_nb));
 	}
@@ -81,15 +82,14 @@ void				backtracking(t_lst **tab, unsigned char nb_tetri)
 {
 	unsigned int	*map;
 	char			map_nb;
+	char	test = 0;
 
 	map = ft_mapgenerator();
 	map_nb = ft_mapminsize(nb_tetri);
-	while (tetri_feeder(tab, map, nb_tetri, map_nb) && map_nb < ROW_NB + 1)
-	{
-		write(1, "MAP++\n", 6);
+	while ((test = tetri_feeder(tab, map, nb_tetri, map_nb)) && map_nb < ROW_NB + 1)
 		++map_nb;
-	}
 	printf("map final size: %d\n", (int)map_nb);
+	printf("0 OK, 1 KO: %d\n", (int)test);
 	free(map);
 	free(*tab);
 }
