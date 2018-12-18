@@ -6,7 +6,7 @@
 /*   By: aquan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/17 14:44:34 by aquan             #+#    #+#             */
-/*   Updated: 2018/12/18 14:25:18 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/18 16:04:18 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,6 +116,7 @@ t_lst				*ft_stock(char *buf, char nb_tetri)
 		tab[i].width = ft_width(tab[i].tetri);
 		tab[i].height = ft_height(tab[i].tetri);
 		tab[i].x = 32 - tab[i].width;
+		tab[i].y = 0; // NOT NORME BUT TEST
 		buf += 21;
 	}
 	return (tab);
