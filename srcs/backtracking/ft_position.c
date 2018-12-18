@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 21:36:08 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/18 15:44:41 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/18 15:50:15 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static char	ft_position_x(t_lst **tab, unsigned int *map, unsigned char n)
 		return (0);
 	}
 	else
-		return (1)
+		return (1);
 }
 
 char		ft_position_y(t_lst **tab, unsigned int *map, unsigned char n)
