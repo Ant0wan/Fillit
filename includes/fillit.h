@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 14:56:46 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/18 12:43:49 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/18 13:53:54 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@
 // DEBUGG
 # include <stdio.h>
 
-#define BUFF_SIZE 2048
+# define BUFF_SIZE 2048
+# define ROW_NB      32
 
 typedef struct	s_lst
 {
@@ -35,7 +36,7 @@ typedef struct	s_lst
 
 void			ft_bzero(void *s, size_t n);
 
-void			backtracking(char nb_tetri, char *av);
+void			backtracking(t_lst **tab, unsigned char nb_tetri);
 
 unsigned char	issamplevalid(t_lst **tab, char *av);
 
