@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 14:56:46 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/17 17:55:16 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/18 11:39:37 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 // DEBUGG
 # include <stdio.h>
 
-#define BUFF_SIZE 650
+#define BUFF_SIZE 545
 
 typedef struct	s_lst
 {

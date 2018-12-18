@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 14:29:58 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/17 19:45:53 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/18 11:36:28 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,11 +74,13 @@ char		issamplevalid(char *argv)
 {
 	int		fd;
 	char	nb_tetri;
-	char	buf[BUFF_SIZE];
+	char	*buf;
 	t_lst	*tab;
 
 	nb_tetri = 0;
 	if ((fd = open(argv, O_RDONLY)) == -1)
+		return (0);
+	if (!(buf = (char*)ft_memalloc(sizeof(char) * BUFF_SIZE + 1)))
 		return (0);
 	if ((read(fd, buf, BUFF_SIZE)) <= 0 || !(nb_tetri = ft_nbtetri(buf)))
 	{
@@ -87,7 +89,9 @@ char		issamplevalid(char *argv)
 	} // a voir car envoi a backtracking(nb tetri et tab)
 	close(fd);
 	tab = ft_stock(buf, nb_tetri);
-	if (tab)
+	free(buf);
+	if (!(tab))
 		return (0);
-	return (nb_tetri);
+	else
+		return (nb_tetri);
 }
