@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 17:21:00 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/18 13:55:13 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/18 14:06:32 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,20 @@ static char			ft_mapminsize(unsigned char nb_tetri)
 	}
 	return (i);
 }
+
+//static char			tetri_feeder(t_lst **tab, unsigned char nb_tetri)
+//{
+//	if (ft_position_y)
+//	{
+//		if (!(tetri--))
+//			return (erreur);
+//		tetri--;
+//		ft_remove(tetri);
+//		tetri->x = x--;
+//		return (tetri_feeder(tab, nb_tetri));
+//	}
+//	return (all done !);
+//}
 
 void				backtracking(t_lst **tab, unsigned char nb_tetri)
 {
