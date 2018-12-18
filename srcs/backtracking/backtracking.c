@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 17:21:00 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/18 12:49:55 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/18 13:55:13 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ static unsigned int	*ft_mapgenerator(void)
 	return (map);
 }
 
-static char			ft_mapminsize(char nb_tetri)
+static char			ft_mapminsize(unsigned char nb_tetri)
 {
-	int		nb_bits;
-	char	i;
+	unsigned short	nb_bits;
+	unsigned char	i;
 
 	nb_bits = nb_tetri * 4;
-	i = 0;
+	i = 4;
 	while (nb_bits > i * i)
 	{
 		++i;
@@ -37,26 +37,21 @@ static char			ft_mapminsize(char nb_tetri)
 	return (i);
 }
 
-void	backtracking(char nb_tetri, char *av)
+void				backtracking(t_lst **tab, unsigned char nb_tetri)
 {
-	char			map_nb;
 	unsigned int	*map;
-	unsigned short	*tab_tetri;
+	char			map_nb;
 
-	map_nb = ft_mapminsize(nb_tetri);
-	tab_tetri = ft_stock_tetri(nb_tetri, av);
 	map = ft_mapgenerator();
-	ft_globalpos(map, tab_tetri, map_nb, nb_tetri);
-	ft_printmap(map, map_nb);
-	write(1, "\n", 1);
+	map_nb = ft_mapminsize(nb_tetri);
+	
 	free(map);
-	free(tab_tetri);
-	return (0);
+	free(*tab);
 }
 
-static char	map_define();
+//static char	map_define();
 
-static char	tetri_feeder();
+//static char	tetri_feeder();
 
 
 
