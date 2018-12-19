@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 14:56:46 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/18 15:49:43 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/19 18:38:04 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,9 @@ unsigned char	issamplevalid(t_lst **tab, char *av);
 
 char			ft_is_tetri_valid(unsigned int *tetri);
 
-char			ft_position_y(t_lst **tab, unsigned int *map, unsigned char n);
+//char			ft_position_y(t_lst **tab, unsigned int *map, unsigned char n);
+
+char			ft_position_x(t_lst **tab, unsigned int *map, unsigned char n, char limit);
 
 void			*ft_memalloc(size_t size);
 
