@@ -6,7 +6,7 @@
 /*   By: aquan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/17 14:44:34 by aquan             #+#    #+#             */
-/*   Updated: 2018/12/18 16:51:47 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/19 19:45:53 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ static char			ft_width(unsigned int *tetri)
 
 t_lst				*ft_stock(char *buf, char nb_tetri)
 {
-	char	i;
+	int	i;
 	t_lst	*tab;
 
 	if (!(tab = (t_lst*)ft_memalloc(sizeof(t_lst) * nb_tetri)))

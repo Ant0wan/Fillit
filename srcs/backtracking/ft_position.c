@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 21:36:08 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/19 19:39:22 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/19 19:54:46 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,13 @@ char		ft_position_y(t_lst **tab, unsigned int *map, unsigned char n, char map_nb
 
 	limit = map_nb - (*tab)[(int)n].height;
 	istherespace = 0;
-	while ((*tab)[(int)n].y <= limit && (istherespace = ft_position_x(tab, &map[(*tab)[(int)n].y], n, ROW_NB - map_nb)))
+	while ((*tab)[(int)n].y <= limit && (istherespace = ft_position_x(tab, &map[(int)(*tab)[(int)n].y], n, ROW_NB - map_nb)))
 			(*tab)[(int)n].y += 1;
 	if (!(istherespace))
-		return (1);
+		return (0);
 	else
 	{
 		(*tab)[(int)n].y = 0;
-		return (0);
+		return (1);
 	}
 }
