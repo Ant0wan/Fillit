@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 17:21:00 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/19 19:05:52 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/19 19:38:50 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,11 +103,17 @@ static char			tetri_feeder(t_lst **tab, unsigned int *map, unsigned char nb_tetr
 	while (n < nb_tetri)
 	{
 		printf("tetri n %d\n", n);
+		printf("tetri x %d\n", (int)(*tab)[(int)n].x);
+		printf("tetri y %d\n", (int)(*tab)[(int)n].y);
+		printf("tetri width %d\n", (int)(*tab)[(int)n].width);
+		printf("tetri height %d\n", (int)(*tab)[(int)n].height);
 		printf("tetri [0]value %d\n", (*tab)[(int)n].tetri[0]);
 		printf("tetri [1]value %d\n", (*tab)[(int)n].tetri[1]);
 		printf("tetri [2]value %d\n", (*tab)[(int)n].tetri[2]);
 		printf("tetri [3]value %d\n", (*tab)[(int)n].tetri[3]);
-		ft_position_x(tab, map, n, 32 - map_nb);
+		ft_position_y(tab, map, n, map_nb);
+		printf("tetri new x %d\n", (int)(*tab)[(int)n].x);
+		printf("tetri new y %d\n", (int)(*tab)[(int)n].y);
 		printBits(n, sizeof(map[0]), &map[0]);
 		printBits(n, sizeof(map[1]), &map[1]);
 		printBits(n, sizeof(map[2]), &map[2]);
