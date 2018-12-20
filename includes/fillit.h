@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 14:56:46 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/20 17:46:05 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/20 18:03:47 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ void			*ft_memalloc(size_t size);
 void			*ft_memset(void *b, int c, size_t len);
 
 char			*ft_strnew(size_t size);
+
+char			*affichage(char map_nb, t_lst **tab, char nb_tetri);
 
 t_lst			*ft_stock(char *buf, char nb_tetri);
 
