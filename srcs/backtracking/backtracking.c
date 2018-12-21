@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 17:21:00 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/21 12:15:37 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/21 12:56:31 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ void				backtracking(t_lst **tab, unsigned char nb_tetri)
 	}
 	printf("map final size: %d\n", (int)map_nb);
 	printf("0 OK, 1 KO: %d\n", (int)test);
-
+	ft_output_fillit(*tab, nb_tetri, map_nb);
 	free(map);
 	free(*tab);
 }
