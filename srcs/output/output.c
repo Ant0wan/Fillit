@@ -6,7 +6,7 @@
 /*   By: aquan <aquan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/18 17:38:07 by aquan             #+#    #+#             */
-/*   Updated: 2018/12/21 14:11:09 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/21 14:23:03 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,23 @@
 
 static void	ft_fitit(t_lst *tab, char *str, char nb_tetri, char map_nb)
 {
-	(void)tab;
-	(void)nb_tetri;
 	int	i;
+	int	w;
 
 	i = -1;
 	while (++i < nb_tetri)	
 	{
-		str[3] = 'A' + i;
-		str[3 + (map_nb + 1)] = 'A' + i;
-		str[3 + (map_nb + 1) * 2] = 'A' + i;
-		str[3 + (map_nb + 1) * 3] = 'A' + i;
+		w = 0;
+		if (tab[i].tetri[0] & 1)
+			str[(ROW_NB - tab[i].x - 1)] = 'A' + i;
+		if (tab[i].tetri[1] & 1)
+			str[ROW_NB - tab[i].x - 1 + (map_nb + 1)] = 'A' + i;
+		if (tab[i].tetri[2] & 1)
+			str[ROW_NB - tab[i].x - 1 + (map_nb + 1) * 2] = 'A' + i;
+		if (tab[i].tetri[3] & 1)
+			str[ROW_NB - tab[i].x - 1 + (map_nb + 1) * 3] = 'A' + i;
 	}
 }
-
 
 void	ft_output_fillit(t_lst *tab, char nb_tetri, char map_nb)
 {
