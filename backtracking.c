@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 17:21:00 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/21 16:49:56 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/21 17:35:56 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,22 +37,22 @@ static char			ft_mapminsize(unsigned char nb_tetri)
 	return (i);
 }
 
-void printBits(size_t const size, void const * const ptr) // DEBUGG
-{
-	unsigned char *b = (unsigned char*) ptr;
-	unsigned char byte;
-	int i, j;
-
-	for (i=size-1;i>=0;i--)
-	{
-		for (j=7;j>=0;j--)
-		{
-			byte = (b[i] >> j) & 1;
-			printf("%u", byte);
-		}
-	}
-	puts("");
-}
+//void printBits(size_t const size, void const * const ptr) // DEBUGG
+//{
+//	unsigned char *b = (unsigned char*) ptr;
+//	unsigned char byte;
+//	int i, j;
+//
+//	for (i=size-1;i>=0;i--)
+//	{
+//		for (j=7;j>=0;j--)
+//		{
+//			byte = (b[i] >> j) & 1;
+//			printf("%u", byte);
+//		}
+//	}
+//	puts("");
+//}
 
 static char	ft_nselector(t_lst **tab, char map_nb, int n, unsigned int *map)
 {
@@ -104,7 +104,7 @@ static char			tetri_feeder(t_lst **tab, unsigned int *map, unsigned char nb_tetr
 //		printBits(sizeof(map[7]), &map[7]); // DEBUGG
 //		printBits(sizeof(map[8]), &map[8]); // DEBUGG
 //		printBits(sizeof(map[9]), &map[9]); // DEBUGG
-//		printBits(sizeof(map[10]), &map[10]); // DEBUGG
+//	 	printBits(sizeof(map[10]), &map[10]); // DEBUGG
 //		printBits(sizeof(map[11]), &map[11]); // DEBUGG
 //		printBits(sizeof(map[12]), &map[12]); // DEBUGG
 //		printBits(sizeof(map[13]), &map[13]); // DEBUGG
@@ -155,39 +155,15 @@ void				backtracking(t_lst **tab, unsigned char nb_tetri)
 	n = 0;
 	map = ft_mapgenerator();
 	map_nb = ft_mapminsize(nb_tetri);
-
-//		printf("VIRGIN MAP\n"); // DEBUGG
-//		printBits(sizeof(map[0]), &map[0]); // DEBUGG
-//		printBits(sizeof(map[1]), &map[1]); // DEBUGG
-//		printBits(sizeof(map[2]), &map[2]); // DEBUGG
-//		printBits(sizeof(map[3]), &map[3]); // DEBUGG
-//		printBits(sizeof(map[4]), &map[4]); // DEBUGG
-//		printBits(sizeof(map[5]), &map[5]); // DEBUGG
-//		printBits(sizeof(map[6]), &map[6]); // DEBUGG
-//		printBits(sizeof(map[7]), &map[7]); // DEBUGG
-//		printBits(sizeof(map[8]), &map[8]); // DEBUGG
-//		printBits(sizeof(map[9]), &map[9]); // DEBUGG
-//		printBits(sizeof(map[10]), &map[10]); // DEBUGG
-//		printBits(sizeof(map[11]), &map[11]); // DEBUGG
-//		printBits(sizeof(map[12]), &map[12]); // DEBUGG
-//		printBits(sizeof(map[13]), &map[13]); // DEBUGG
-//		printf("\n");
-//	printf("map size: %d\n", (int)map_nb);
 	while ((test = tetri_feeder(tab, map, nb_tetri, map_nb)) && map_nb < ROW_NB)
 	{
-//		n = -1;
-//		while (++n < nb_tetri)
-//		{
-//			(*tab)[(int)n].x = ROW_NB - (*tab)[(int)n].width;
-//			(*tab)[(int)n].y = 0;
-//		}
 //		free(map);
 //		map = ft_mapgenerator();
 		++map_nb;
-//		write(1, "MAP++\n",6);
 	}
 	if (test == 1)
 		return;
+//	printf("map size: %d\n", (int)map_nb);
 	ft_output_fillit(*tab, nb_tetri, map_nb);
 	free(map);
 	free(*tab);
