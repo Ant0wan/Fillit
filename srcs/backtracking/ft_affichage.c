@@ -6,27 +6,14 @@
 /*   By: aquan <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/18 17:38:07 by aquan             #+#    #+#             */
-/*   Updated: 2018/12/21 10:59:28 by aquan            ###   ########.fr       */
+/*   Updated: 2018/12/21 12:12:38 by aquan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 #include <stdio.h>
-void	*ft_lines(char *str, char map_nb)
-{
-	int i;
 
-	i = 0;
-	while (i < (map_nb * (map_nb + 1)))
-	{
-		if ((i + 1 % map_nb) == 0)
-			str[i] = '\n';
-		++i;
-	}
-	return (0);
-}
-
-void	*ft_place_tetri(char *str, char map_nb, t_lst **tab, char n)
+void	ft_place_tetri(char *str, char map_nb, t_lst **tab, char n)
 {	
 	static int 				letter = 0;
 	unsigned char			j;
@@ -39,36 +26,41 @@ void	*ft_place_tetri(char *str, char map_nb, t_lst **tab, char n)
 	{
 		j = 0;
 		k = ((*tab)[(int)n].tetri[i]);
-		printf("TEST\n");
 		while (j < ((*tab)[(int)n].width))
 		{		
-			if (((*tab)[(int)n].tetri[i]) & (0x1 << 15))
+			if (1 & k)
 			{	
-				index = ((*tab)[(int)n].y) * (map_nb + 1) + ((*tab)[(int)n].x + j);
-				str[j++] = 'A' + letter;
-		//		k <<= 1;
+				index = (((*tab)[(int)n].y + i) * (map_nb + 1) + ((*tab)[(int)n].x + j));
+			//	index = (((*tab)[(int)n].y) * (map_nb + 1) + ((*tab)[(int)n].x + j));
+				printf("i = %d width = %d  index = %d    j = %d\n",i, ((*tab)[(int)n].width), index, j);
+			//	str[i * (map_nb + 1) + index] = 'A' + letter;
+				str[index] = 'A' + letter;
+				printf("i * map_nb + index = %d\n", i * map_nb + index);
 			}
-			printf("VALEUR DE J: %d\n", j);
-			printf("VALEUR DE K: %d\n", k);
-			k <<= 1;
-			j++;
+			k >>= 1;
+			++j;
 		}
-		i++;
+		++i;
 	}
 	++letter;
-	return (0);
 }
 
 char	*affichage(char map_nb, t_lst **tab, char nb_tetri)
 {	
-	int idx_tetri;
-	char *str;
+	int		idx_tetri;
+	char 	*str;
+	int		i;
 
 	if (!(str = (char*)ft_strnew(map_nb * (map_nb + 1))))
 		return (0);
 	ft_memset(str, '.', map_nb * (map_nb + 1));
 //	str[map_nb * map_nb + 1] = '\0';
-	ft_lines(str, map_nb + 1);
+	i = 0;
+	while (i < (map_nb))
+	{
+		str[((i + 1) * (map_nb + 1)) - 1] = '\n';
+		++i;
+	}
 	idx_tetri = 0;
 	while (idx_tetri < nb_tetri)
 	{
