@@ -6,7 +6,7 @@
 /*   By: aquan <aquan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/18 17:38:07 by aquan             #+#    #+#             */
-/*   Updated: 2018/12/21 15:34:35 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/25 16:32:22 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,6 @@ void	ft_output_fillit(t_lst *tab, char nb_tetri, char map_nb)
 				str[i] = '\n';
 		ft_fitit(tab, str, nb_tetri, map_nb);
 		write(1, str, nb_bits);
+		free(str);
 	}
 }
