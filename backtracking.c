@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 17:21:00 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/21 17:35:56 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/21 17:39:02 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,11 +156,7 @@ void				backtracking(t_lst **tab, unsigned char nb_tetri)
 	map = ft_mapgenerator();
 	map_nb = ft_mapminsize(nb_tetri);
 	while ((test = tetri_feeder(tab, map, nb_tetri, map_nb)) && map_nb < ROW_NB)
-	{
-//		free(map);
-//		map = ft_mapgenerator();
 		++map_nb;
-	}
 	if (test == 1)
 		return;
 //	printf("map size: %d\n", (int)map_nb);
