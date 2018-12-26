@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 17:21:00 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/26 17:54:10 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/26 18:37:51 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,13 +67,10 @@ static char	ft_nselector(t_lst **tab, char map_nb, int n, unsigned int *map)
 static char			tetri_feeder(t_lst **tab, unsigned int *map, unsigned char nb_tetri, char map_nb)
 {
 	static int	n = 0;
-	int res;
 
-	res = 0;
 	while (n < nb_tetri)
 	{
-		res = (int)ft_position_y(tab, map, n, map_nb);
-		if (res)
+		if (ft_position_y(tab, map, n, map_nb))
 		{
 			n = ft_nselector(tab, map_nb, n, map);
 			if (n == -1)
