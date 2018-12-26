@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 21:36:08 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/19 21:47:00 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/26 17:54:32 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,5 @@ char		ft_position_y(t_lst **tab, unsigned int *map, unsigned char n, char map_nb
 	if (!(istherespace))
 		return (0);
 	else
-	{
-		(*tab)[(int)n].y = 0;
 		return (1);
-	}
 }
