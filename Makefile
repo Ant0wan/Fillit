@@ -6,7 +6,7 @@
 #    By: aquan <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/24 10:06:44 by aquan             #+#    #+#              #
-#    Updated: 2018/12/24 10:53:10 by aquan            ###   ########.fr        #
+#    Updated: 2018/12/26 17:46:38 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ all		:	$(NAME)
 
 $(NAME)	:	$(OBJS) $(LIB)
 			$(CC) $(OBJS) -o $(NAME)
-			@echo "Joyeux Noel"
+			@echo "\x1b[32;01mJoyeux Noel a toi aussi !!!\x1b[0m"
 clean	:
 			$(RM) $(OBJS)
 
