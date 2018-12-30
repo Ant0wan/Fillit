@@ -6,36 +6,11 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 17:21:00 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/26 18:37:51 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/30 16:17:42 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-
-static unsigned int	*ft_mapgenerator(void)
-{
-	unsigned int	*map;
-
-	if (!(map = (unsigned int*)ft_memalloc(sizeof(unsigned int) * ROW_NB)))
-		return (NULL);
-	return (map);
-}
-
-static char			ft_mapminsize(unsigned char nb_tetri)
-{
-	unsigned short	nb_bits;
-	unsigned char	i;
-
-	nb_bits = nb_tetri * 4;
-	i = 4;
-	while (nb_bits > i * i)
-	{
-		++i;
-		if (nb_bits == i * i)
-			return (i);
-	}
-	return (i);
-}
 
 static char	ft_nselector(t_lst **tab, char map_nb, int n, unsigned int *map)
 {
