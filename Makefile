@@ -6,7 +6,7 @@
 #    By: aquan <auqn@student.42.fr>                 +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/24 10:06:44 by aquan             #+#    #+#              #
-#    Updated: 2018/12/30 20:47:32 by abarthel         ###   ########.fr        #
+#    Updated: 2018/12/30 22:20:38 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,10 +38,10 @@ RM		=	rm -rf
 all		:	$(NAME)
 
 %.o		:	%.c
-			$(CC) $(CFLAGS) -c $< -o $@ 
+			@$(CC) $(CFLAGS) -c $< -o $@ 
 
 $(NAME)	:	$(OBJS) $(LIB)
-			$(CC) $(OBJS) -o $(NAME)
+			@$(CC) $(OBJS) -o $(NAME)
 			@echo "\x1b[32;01mCOMPILATION DONE\x1b[0m"
 clean	:
 			$(RM) $(OBJS)
