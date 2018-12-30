@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 14:29:58 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/30 16:51:12 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/30 19:39:55 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,11 +90,10 @@ unsigned char			issamplevalid(t_lst **tab, char *argv)
 	}
 	close(fd);
 	*tab = ft_stock(buf, nb_tetri);
-	while (++n < nb_tetri)
-		(*tab)[(int)n].y = 0;
 	free(buf);
 	if (!(*tab))
 		return (0);
-	else
-		return (nb_tetri);
+	while (++n < nb_tetri)
+		(*tab)[(int)n].y = 0;
+	return (nb_tetri);
 }
