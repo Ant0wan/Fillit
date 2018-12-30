@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 14:56:46 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/30 16:18:54 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/30 16:56:26 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,6 @@
 # include <sys/uio.h>
 # include <unistd.h>
 # include <stdlib.h>
-
-// DEBUGG
-# include <stdio.h>
 
 # define BUFF_SIZE 2048
 # define ROW_NB      32
@@ -48,7 +45,8 @@ char			ft_is_tetri_valid(unsigned int *tetri);
 
 char			ft_mapminsize(unsigned char nb_tetri);
 
-char			ft_position_y(t_lst **tab, unsigned int *map, unsigned char n, char map_nb);
+char			ft_position_y(t_lst **tab, unsigned int *map, unsigned char n,
+		char map_nb);
 
 void			*ft_memalloc(size_t size);
 

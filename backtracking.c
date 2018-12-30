@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 17:21:00 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/30 16:29:28 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/30 17:00:32 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ static char	ft_nselector(t_lst **tab, char map_nb, int n, unsigned int *map)
 	(*tab)[(int)n].y = 0;
 	while (--n >= 0)
 	{
-		ft_placerm(&(map[(int)(*tab)[(int)n].y]), (*tab)[(int)n].tetri, (*tab)[(int)n].x);
+		ft_placerm(&(map[(int)(*tab)[(int)n].y]), (*tab)[(int)n].tetri,
+				(*tab)[(int)n].x);
 		if ((*tab)[(int)n].x > ROW_NB - map_nb)
 		{
 			(*tab)[(int)n].x -= 1;
@@ -39,7 +40,8 @@ static char	ft_nselector(t_lst **tab, char map_nb, int n, unsigned int *map)
 	return (-1);
 }
 
-static char			tetri_feeder(t_lst **tab, unsigned int *map, unsigned char nb_tetri, char map_nb)
+static char	tetri_feeder(t_lst **tab, unsigned int *map,
+		unsigned char nb_tetri, char map_nb)
 {
 	static int	n = 0;
 
@@ -59,7 +61,8 @@ static char			tetri_feeder(t_lst **tab, unsigned int *map, unsigned char nb_tetr
 	return (0);
 }
 
-static char			backtr_manager(t_lst **tab, unsigned int *map, unsigned char nb_tetri, char map_nb)
+static char	backtr_manager(t_lst **tab, unsigned int *map,
+		unsigned char nb_tetri, char map_nb)
 {
 	char	feeder_ret;
 
@@ -72,20 +75,20 @@ static char			backtr_manager(t_lst **tab, unsigned int *map, unsigned char nb_te
 		return (0);
 }
 
-void				backtracking(t_lst **tab, unsigned char nb_tetri)
+void		backtracking(t_lst **tab, unsigned char nb_tetri)
 {
 	unsigned int	*map;
 	char			map_nb;
-	char			test = 0;
-	char			n;
+	char			bcktr_ret;
 
-	n = 0;
+	bcktr_ret = 0;
 	map = ft_mapgenerator();
 	map_nb = ft_mapminsize(nb_tetri);
-	while ((test = backtr_manager(tab, map, nb_tetri, map_nb)) && map_nb < ROW_NB)
+	while ((bcktr_ret = backtr_manager(tab, map, nb_tetri, map_nb))
+			&& map_nb < ROW_NB)
 		++map_nb;
-	if (test == 1)
-		return;
+	if (bcktr_ret == 1)
+		return ;
 	ft_output_fillit(*tab, nb_tetri, map_nb);
 	free(map);
 	free(*tab);
