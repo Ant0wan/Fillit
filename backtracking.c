@@ -6,11 +6,13 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 17:21:00 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/30 17:00:32 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/30 18:57:27 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+
+#include <stdio.h>
 
 static char	ft_nselector(t_lst **tab, char map_nb, int n, unsigned int *map)
 {
@@ -40,55 +42,42 @@ static char	ft_nselector(t_lst **tab, char map_nb, int n, unsigned int *map)
 	return (-1);
 }
 
-static char	tetri_feeder(t_lst **tab, unsigned int *map,
-		unsigned char nb_tetri, char map_nb)
+static char	tetri_feeder(t_lst **tab, unsigned int *map, char map_nb)
 {
 	static int	n = 0;
 
-	while (n < nb_tetri)
-	{
-		if (ft_position_y(tab, map, n, map_nb))
-		{
-			n = ft_nselector(tab, map_nb, n, map);
-			if (n == -1)
-				return (1);
-			else
-				return (2);
-		}
-		else
-			++n;
-	}
-	return (0);
-}
-
-static char	backtr_manager(t_lst **tab, unsigned int *map,
-		unsigned char nb_tetri, char map_nb)
-{
-	char	feeder_ret;
-
-	feeder_ret = 0;
-	while ((feeder_ret = tetri_feeder(tab, map, nb_tetri, map_nb)) == 2)
-		tetri_feeder(tab, map, nb_tetri, map_nb);
-	if (feeder_ret)
-		return (feeder_ret);
+	if (n == -1)
+		n = 0;
+	if (!(ft_position_y(tab, map, n, map_nb)))
+		++n;
 	else
-		return (0);
+	{
+//		printf("n before : %d\n", n);
+		n = ft_nselector(tab, map_nb, n, map);
+//		printf("n after : %d\n", n);
+	}
+	return (n);
 }
 
 void		backtracking(t_lst **tab, unsigned char nb_tetri)
 {
 	unsigned int	*map;
 	char			map_nb;
-	char			bcktr_ret;
+	char			ret;
 
-	bcktr_ret = 0;
+	ret = 0;
 	map = ft_mapgenerator();
 	map_nb = ft_mapminsize(nb_tetri);
-	while ((bcktr_ret = backtr_manager(tab, map, nb_tetri, map_nb))
-			&& map_nb < ROW_NB)
-		++map_nb;
-	if (bcktr_ret == 1)
-		return ;
+//	map_nb = 4;
+	while (map_nb < ROW_NB)
+	{
+		ret = tetri_feeder(tab, map, map_nb);
+//		printf("ret : %d\n", ret);
+		if (ret == -1)
+			++map_nb;
+		else if (ret == nb_tetri)
+			break;
+	}
 	ft_output_fillit(*tab, nb_tetri, map_nb);
 	free(map);
 	free(*tab);
