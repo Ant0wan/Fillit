@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 17:21:00 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/30 16:17:42 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/30 16:29:28 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,25 @@ static char			tetri_feeder(t_lst **tab, unsigned int *map, unsigned char nb_tetr
 			if (n == -1)
 				return (1);
 			else
-				return (tetri_feeder(tab, map, nb_tetri, map_nb));
+				return (2);
 		}
 		else
 			++n;
 	}
 	return (0);
+}
+
+static char			backtr_manager(t_lst **tab, unsigned int *map, unsigned char nb_tetri, char map_nb)
+{
+	char	feeder_ret;
+
+	feeder_ret = 0;
+	while ((feeder_ret = tetri_feeder(tab, map, nb_tetri, map_nb)) == 2)
+		tetri_feeder(tab, map, nb_tetri, map_nb);
+	if (feeder_ret)
+		return (feeder_ret);
+	else
+		return (0);
 }
 
 void				backtracking(t_lst **tab, unsigned char nb_tetri)
@@ -69,7 +82,7 @@ void				backtracking(t_lst **tab, unsigned char nb_tetri)
 	n = 0;
 	map = ft_mapgenerator();
 	map_nb = ft_mapminsize(nb_tetri);
-	while ((test = tetri_feeder(tab, map, nb_tetri, map_nb)) && map_nb < ROW_NB)
+	while ((test = backtr_manager(tab, map, nb_tetri, map_nb)) && map_nb < ROW_NB)
 		++map_nb;
 	if (test == 1)
 		return;
