@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 14:29:58 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/18 14:24:33 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/30 16:51:12 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,13 +70,15 @@ static unsigned char	ft_nbtetri(char *buf)
 	return (nb_tetri);
 }
 
-unsigned char					issamplevalid(t_lst **tab, char *argv)
+unsigned char			issamplevalid(t_lst **tab, char *argv)
 {
 	int				fd;
 	unsigned char	nb_tetri;
 	char			*buf;
+	char			n;
 
 	nb_tetri = 0;
+	n = 0;
 	if ((fd = open(argv, O_RDONLY)) == -1)
 		return (0);
 	if (!(buf = (char*)ft_memalloc(sizeof(char) * BUFF_SIZE + 1)))
@@ -88,6 +90,8 @@ unsigned char					issamplevalid(t_lst **tab, char *argv)
 	}
 	close(fd);
 	*tab = ft_stock(buf, nb_tetri);
+	while (++n < nb_tetri)
+		(*tab)[(int)n].y = 0;
 	free(buf);
 	if (!(*tab))
 		return (0);
