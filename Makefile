@@ -6,7 +6,7 @@
 #    By: aquan <auqn@student.42.fr>                 +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/24 10:06:44 by aquan             #+#    #+#              #
-#    Updated: 2018/12/30 22:20:38 by abarthel         ###   ########.fr        #
+#    Updated: 2018/12/30 22:25:04 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,11 +42,13 @@ all		:	$(NAME)
 
 $(NAME)	:	$(OBJS) $(LIB)
 			@$(CC) $(OBJS) -o $(NAME)
-			@echo "\x1b[32;01mCOMPILATION DONE\x1b[0m"
+			@echo "\x1b[32;01mcompilation done\x1b[0m"
 clean	:
-			$(RM) $(OBJS)
+			@$(RM) $(OBJS) 1>/dev/null
+			@echo "\x1b[34;01mclean done\x1b[0m"
 
 fclean	:	clean
-			$(RM) $(NAME)
+			@$(RM) $(NAME) 1>/dev/null
+			@echo "\x1b[31;01mfclean done\x1b[0m"
 
 re		:	fclean all
