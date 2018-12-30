@@ -6,7 +6,7 @@
 #    By: aquan <auqn@student.42.fr>                 +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/24 10:06:44 by aquan             #+#    #+#              #
-#    Updated: 2018/12/30 16:19:59 by abarthel         ###   ########.fr        #
+#    Updated: 2018/12/30 20:47:32 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,8 +34,6 @@ CC		=	gcc
 CFLAGS	=	-Wall -Wextra -Werror -I $(LIB)
 
 RM		=	rm -rf
-
-CLEAN	=	clean
 
 all		:	$(NAME)
 
