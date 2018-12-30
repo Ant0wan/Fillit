@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aquan <marvin@42.fr>                       +#+  +:+       +#+         #
+#    By: aquan <auqn@student.42.fr>                 +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/24 10:06:44 by aquan             #+#    #+#              #
-#    Updated: 2018/12/26 18:36:01 by abarthel         ###   ########.fr        #
+#    Updated: 2018/12/30 16:19:59 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ SRCS	=	ft_placerm.c\
 			ft_position.c\
 			ft_setdot.c\
 			ft_stock.c\
+			ft_map.c\
 			ft_tetri_validity.c\
 			issamplevalid.c\
 			backtracking.c\
@@ -43,7 +44,7 @@ all		:	$(NAME)
 
 $(NAME)	:	$(OBJS) $(LIB)
 			$(CC) $(OBJS) -o $(NAME)
-			@echo "\x1b[32;01mCOMPILATION DONE... Joyeux Noel a toi aussi !!!\x1b[0m"
+			@echo "\x1b[32;01mCOMPILATION DONE\x1b[0m"
 clean	:
 			$(RM) $(OBJS)
 
