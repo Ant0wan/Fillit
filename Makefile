@@ -6,7 +6,7 @@
 #    By: aquan <auqn@student.42.fr>                 +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/24 10:06:44 by aquan             #+#    #+#              #
-#    Updated: 2018/12/30 22:25:04 by abarthel         ###   ########.fr        #
+#    Updated: 2018/12/31 18:24:27 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ SRCS	=	ft_placerm.c\
 
 OBJS	=	$(SRCS:.c=.o)
 
-LIB		=	./includes
+LIB		=	./
 
 CC		=	gcc
 
