@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 14:09:45 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/30 16:53:10 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/31 17:09:24 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	ft_bdot(void *s, size_t n)
 	s_ptr = (unsigned char*)s;
 	while (++i < n)
 		s_ptr[i] = '.';
-	s_ptr[i] = 0x00;
+	s_ptr[i - 1] = 0x00;
 }
 
 void		*ft_setdot(size_t size)
