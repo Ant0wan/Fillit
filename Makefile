@@ -6,7 +6,7 @@
 #    By: aquan <auqn@student.42.fr>                 +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/24 10:06:44 by aquan             #+#    #+#              #
-#    Updated: 2018/12/31 18:24:27 by abarthel         ###   ########.fr        #
+#    Updated: 2018/12/31 18:25:57 by abarthel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,11 +27,9 @@ SRCS	=	ft_placerm.c\
 
 OBJS	=	$(SRCS:.c=.o)
 
-LIB		=	./
-
 CC		=	gcc
 
-CFLAGS	=	-Wall -Wextra -Werror -I $(LIB)
+CFLAGS	=	-Wall -Wextra -Werror
 
 RM		=	rm -rf
 
@@ -40,7 +38,7 @@ all		:	$(NAME)
 %.o		:	%.c
 			@$(CC) $(CFLAGS) -c $< -o $@ 
 
-$(NAME)	:	$(OBJS) $(LIB)
+$(NAME)	:	$(OBJS)
 			@$(CC) $(OBJS) -o $(NAME)
 			@echo "\x1b[32;01mcompilation done\x1b[0m"
 clean	:
