@@ -6,7 +6,7 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 14:29:58 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/30 19:39:55 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/31 17:14:53 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ unsigned char			issamplevalid(t_lst **tab, char *argv)
 		return (0);
 	if ((read(fd, buf, BUFF_SIZE)) <= 0 || !(nb_tetri = ft_nbtetri(buf)))
 	{
+		free(buf);
 		close(fd);
 		return (0);
 	}
