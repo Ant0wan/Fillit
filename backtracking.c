@@ -6,15 +6,13 @@
 /*   By: abarthel <abarthel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 17:21:00 by abarthel          #+#    #+#             */
-/*   Updated: 2018/12/30 22:27:26 by abarthel         ###   ########.fr       */
+/*   Updated: 2018/12/31 11:33:20 by abarthel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-#include <stdio.h>
-
-static char	ft_nselector(t_lst **tab, char map_nb, int n, unsigned int *map)
+static char	ft_nselector(t_lst **tab, char map_nb, char n, unsigned int *map)
 {
 	(*tab)[(int)n].x = ROW_NB - (*tab)[(int)n].width;
 	(*tab)[(int)n].y = 0;
@@ -44,7 +42,7 @@ static char	ft_nselector(t_lst **tab, char map_nb, int n, unsigned int *map)
 
 static char	tetri_feeder(t_lst **tab, unsigned int *map, char map_nb)
 {
-	static int	n = 0;
+	static char	n = 0;
 
 	if (n == -1)
 		n = 0;
