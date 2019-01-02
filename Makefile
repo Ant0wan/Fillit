@@ -29,8 +29,6 @@ OBJS	=	$(SRCS:.c=.o)
 
 CC		=	gcc
 
-CFLAGS	=	-Wall -Wextra -Werror -O3
-
 RM		=	rm -rf
 
 all		:	$(NAME)
