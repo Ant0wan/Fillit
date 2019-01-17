@@ -123,12 +123,6 @@ Example of forbidden flags:
 
 ---
 
-## Usage
-
-
-
----
-
 ## Inputs
 
 A Tetriminos is a 4-blocks geometric figure in the following format.
@@ -176,7 +170,34 @@ A Tetriminos must respect the following rules :
 - each character must be either a ’#’ when the character is one of the 4 blocks of a Tetriminos or a ’.’ if it’s empty
 - each block of a Tetriminos must be in contact with at least one other block on any of his 4 sides 
 
+A sample is a file with at minimum 1 Tetriminos up to 26 Tetriminos and must be structured as follow.
+
+```SHELL=
+> cat -e valid_sample.fillit
+....$
+....$
+..##$
+..##$
+$
+##..$
+.##.$
+....$
+....$
+$
+..#.$
+..#.$
+..#.$
+..#.$
+$
+..#.$
+..#.$
+..#.$
+..#.$
+```
+
 ---
 
+## Usage
 
+[![FillitDemo](https://i.imgur.com/9NXfcit.jpg)](i.imgur.com/9NXfcit.jpg)
 
