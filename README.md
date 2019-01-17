@@ -1,6 +1,6 @@
 # Fillit [![42](https://i.imgur.com/9NXfcit.jpg)](i.imgur.com/9NXfcit.jpg)
 
-Algorithm which fits some Tetriminos together into tha smallest possible square.
+Algorithm which fits some Tetriminos together - without rotation - into the smallest possible square.
 
 It is written in C and according the 42's Norme coding standard.
 
@@ -123,9 +123,16 @@ Example of forbidden flags:
 
 ---
 
+## Usage
+
+
+
+---
+
 ## Inputs
 
 A Tetriminos is a 4-blocks geometric figure in the following format.
+
 ```
 ....
 .##.
@@ -136,9 +143,15 @@ A Tetriminos is a 4-blocks geometric figure in the following format.
 ..##
 ....
 ....
+
+..##
+..##
+....
+....
 ```
 
 Example of invalid format.
+
 ```
 ....
 ....
@@ -149,7 +162,19 @@ Example of invalid format.
 ..#.
 ....
 ....
+
+#.
+#.
+#.
+#.
 ```
+
+A Tetriminos must respect the following rules :
+
+- 4 lines of 4 characters followed by a new line
+- classic piece of <a href="https://tetris.com" target="_blank">Tetris</a> composed of 4 blocks
+- each character must be either a ’#’ when the character is one of the 4 blocks of a Tetriminos or a ’.’ if it’s empty
+- each block of a Tetriminos must be in contact with at least one other block on any of his 4 sides 
 
 ---
 
