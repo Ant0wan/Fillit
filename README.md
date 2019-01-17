@@ -223,7 +223,7 @@ After creating a valid sample file following the rules mentionned in section "In
 
 ---
 
-## You might want more samples for testing Fillit ?
+## Want more samples for testing Fillit ?
 
 Check out <a href="https://github.com/Ant0wan/BenchmarkyourFillit.git" target="_blank">BenchmarkyourFillit</a> a project linked to this one !
 
