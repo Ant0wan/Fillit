@@ -221,3 +221,10 @@ After creating a valid sample file following the rules mentionned in section "In
 
 [![FillitDemo](https://i.imgur.com/m5TOan9.gif)](i.imgur.com/m5TOan9.gif)
 
+### You might want more samples for testing ./fillit ?
+
+Check out <a href="https://github.com/Ant0wan/BenchmarkyourFillit.git" target="_blank">BenchmarkyourFillit</a> a project linked to this one !
+
+BenchmarkyourFillit compare your executing time and the quality of your fillit>
+
+[![DemoBenchmarking](https://i.imgur.com/5273vVd.gif)](i.imgur.com/5273vVd.gif)
