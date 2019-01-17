@@ -1,5 +1,7 @@
 # Fillit [![42](https://i.imgur.com/9NXfcit.jpg)](i.imgur.com/9NXfcit.jpg)
 
+by <a href="https://github.com/anniton" target="_blank">aquan</a> and <a href="https://github.com/Ant0wan" target="_blank">abarthel</a>.
+
 Algorithm which fits some Tetriminos together - without rotation - into the smallest possible square.
 
 It is written in C and according the 42's Norme coding standard.
