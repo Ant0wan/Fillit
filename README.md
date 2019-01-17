@@ -4,7 +4,7 @@ Algorithm which fits some Tetriminos together into tha smallest possible square.
 
 It is written in C and according the 42's Norme coding standard.
 
-Allowed functions were:
+On top of the functions recoded in <a href="https://github.com/Ant0wan/Libft.git" target="_blank">Libft [a 42 project]</a>, allowed functions were:
 ```
 exit, open, close, write, read, malloc and free.
 ```
