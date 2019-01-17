@@ -204,10 +204,6 @@ error
 
 ## Usage
 
-- Usage Demo
-
-[![FillitDemo](https://i.imgur.com/m5TOan9.gif)](i.imgur.com/m5TOan9.gif)
-
 - Compiling the project
 
 ```shell=
@@ -221,12 +217,20 @@ After creating a valid sample file following the rules mentionned in section "In
 ./fillit sample.fillit
 ```
 
+- Usage Demo
+
+[![FillitDemo](https://i.imgur.com/m5TOan9.gif)](i.imgur.com/m5TOan9.gif)
+
 ---
 
 ## You might want more samples for testing Fillit ?
 
 Check out <a href="https://github.com/Ant0wan/BenchmarkyourFillit.git" target="_blank">BenchmarkyourFillit</a> a project linked to this one !
 
-BenchmarkyourFillit compare your executing time and the quality of your fillit>
+BenchmarkyourFillit compare your executing time and the quality of your fillit. It contains 5 test sets:
+
+- 1 checking the parsing
+
+- and 4 depending on the level of difficulty chosen
 
 [![DemoBenchmarking](https://i.imgur.com/5273vVd.gif)](i.imgur.com/5273vVd.gif)
