@@ -195,9 +195,29 @@ $
 ..#.$
 ```
 
+If the file contains an error, the program displays
+```SHELL=
+error
+```
+
 ---
 
 ## Usage
 
-[![FillitDemo](https://i.imgur.com/9NXfcit.jpg)](i.imgur.com/9NXfcit.jpg)
+- Compiling the project
+
+```shell=
+git clone https://github.com/Ant0wan/Fillit.git && make
+```
+
+After creating a valid sample file following the rules mentionned in section "Inputs", go to the following.
+
+- Executing program with a sample as argument
+```shell=
+./fillit sample.fillit
+```
+
+- Usage Demo
+
+[![FillitDemo](https://i.imgur.com/m5TOan9.gif)](i.imgur.com/m5TOan9.gif)
 
