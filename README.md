@@ -16,7 +16,7 @@ The makefile contains the following rules : all, clean, fclean et re. It compile
 <p align="center">
 	<br>
 	<img width="320" height="312" src="https://i.imgur.com/zhjXZNr.png"> <br>
-	<em>Illustration by <a href="https://github.com/anniton" target="_blank">aquan</a></em>
+	<em>(42 Tetris illustration by <a href="https://github.com/anniton" target="_blank">aquan</a>)</em>
 </p>
 
 Example of forbidden flags:
