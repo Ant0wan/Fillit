@@ -14,7 +14,7 @@ exit, open, close, write, read, malloc and free.
 The makefile contains the following rules : all, clean, fclean et re. It compile a ./fillit using Wall, Wextra and Werror flags. Any other flag, and especially for optimising purposes, were strictly forbidden.
 
 <p align="center">
-	<img width="320" height="312" src="https://i.imgur.com/zhjXZNr.png">
+	<img width="320" height="312" src="https://i.imgur.com/zhjXZNr.png"> <br>
 	<em>Illustration by <a href="https://github.com/anniton" target="_blank">aquan</a></em>
 </p>
 
