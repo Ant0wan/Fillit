@@ -4,7 +4,7 @@ by <a href="https://github.com/anniton" target="_blank">aquan</a> and <a href="h
 
 Algorithm which fits some Tetriminos together - without rotation - into the smallest possible square.
 
-It is written in C and according the 42's Norme coding standard.
+It is written in C and according to the 42's Norme coding standard.
 
 On top of the functions recoded in <a href="https://github.com/Ant0wan/Libft.git" target="_blank">Libft [a 42 project]</a>, allowed functions were:
 ```
